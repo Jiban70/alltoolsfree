@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | AllToolsFree Support</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root { --primary: #3b82f6; --bg-dark: #020617; --card-bg: #0f172a; --text-main: #f8fafc; }
+        body { background-color: var(--bg-dark); color: var(--text-main); font-family: 'Plus Jakarta Sans', sans-serif; margin: 0; display: flex; align-items: center; justify-content: center; min-height: 100vh; }
+        .contact-card { background: var(--card-bg); border: 1px solid rgba(255,255,255,0.08); padding: 50px; border-radius: 30px; max-width: 500px; width: 90%; text-align: center; box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
+        h1 { font-family: 'Poppins'; font-size: 36px; margin-bottom: 10px; color: var(--primary); }
+        p { color: #94a3b8; margin-bottom: 30px; }
+        .email-link { display: inline-block; padding: 15px 30px; background: var(--primary); color: white; text-decoration: none; border-radius: 15px; font-weight: 800; transition: transform 0.3s; }
+        .email-link:hover { transform: scale(1.05); }
+        .social-links { margin-top: 30px; display: flex; justify-content: center; gap: 20px; font-size: 24px; }
+        .social-links a { color: #64748b; transition: 0.3s; }
+        .social-links a:hover { color: var(--primary); }
+        .back-home { display: block; margin-top: 40px; color: #475569; text-decoration: none; font-size: 14px; }
+    </style>
+</head>
+<body>
+    <div class="contact-card">
+        <h1>Get in Touch.</h1>
+        <p>Have a tool suggestion or found a bug? We'd love to hear from you. AllToolsFree is built for the community.</p>
+        
+        <a href="mailto:your-email@example.com" class="email-link">
+            <i class="fas fa-envelope"></i> Send an Email
+        </a>
+
+        <div class="social-links">
+            <a href="https://github.com/jiban70" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+
+        <a href="index.html" class="back-home">← Back to Homepage</a>
+    </div>
+</body>
+</html>
