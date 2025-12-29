@@ -1,80 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-  
-  <url>
-    <loc>https://jiban70.github.io/alltoolsfree/index.html</loc>
-    <lastmod>2025-12-28</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.00</priority>
-  </url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://jiban70.github.io/alltoolsfree/index.html</loc><priority>1.0</priority></url>
+  <url><loc>https://jiban70.github.io/alltoolsfree/about.html</loc><priority>0.8</priority></url>
+  <url><loc>https://jiban70.github.io/alltoolsfree/contact.html</loc><priority>0.8</priority></url>
+  <url><loc>https://jiban70.github.io/alltoolsfree/privacy.html</loc><priority>0.8</priority></url>
 
-  <url>
-    <loc>https://jiban70.github.io/alltoolsfree/bg-remover.html</loc>
-    <lastmod>2025-12-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
-  </url>
-  <url>
-    <loc>https://jiban70.github.io/alltoolsfree/profile-maker.html</loc>
-    <lastmod>2025-12-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
-  </url>
+  <url><loc>https://jiban70.github.io/alltoolsfree/bg-remover.html</loc><priority>0.9</priority></url>
+  <url><loc>https://jiban70.github.io/alltoolsfree/pp-photo-maker.html</loc><priority>0.9</priority></url>
+  <url><loc>https://jiban70.github.io/alltoolsfree/profile-maker.html</loc><priority>0.9</priority></url>
+  <url><loc>https://jiban70.github.io/alltoolsfree/resume-builder.html</loc><priority>0.9</priority></url>
 
-  <url>
-    <loc>https://jiban70.github.io/alltoolsfree/plagiarism-checker.html</loc>
-    <lastmod>2025-12-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://jiban70.github.io/alltoolsfree/youtube-metadata.html</loc>
-    <lastmod>2025-12-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
+  <url><loc>https://jiban70.github.io/alltoolsfree/image-to-pdf.html</loc><priority>0.9</priority></url>
+  <url><loc>https://jiban70.github.io/alltoolsfree/merge-pdf.html</loc><priority>0.9</priority></url>
+  <url><loc>https://jiban70.github.io/alltoolsfree/heic-to-jpg.html</loc><priority>0.9</priority></url>
+  <url><loc>https://jiban70.github.io/alltoolsfree/unit-converter.html</loc><priority>0.9</priority></url>
 
-  <url>
-    <loc>https://jiban70.github.io/alltoolsfree/resume-builder.html</loc>
-    <lastmod>2025-12-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://jiban70.github.io/alltoolsfree/invoice-maker.html</loc>
-    <lastmod>2025-12-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
-  </url>
-
-  <url>
-    <loc>https://jiban70.github.io/alltoolsfree/finance-calc.html</loc>
-    <lastmod>2025-12-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://jiban70.github.io/alltoolsfree/unit-converter.html</loc>
-    <lastmod>2025-12-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-
-  <url>
-    <loc>https://jiban70.github.io/alltoolsfree/privacy.html</loc>
-    <lastmod>2025-12-28</lastmod>
-    <priority>0.50</priority>
-  </url>
-  <url>
-    <loc>https://jiban70.github.io/alltoolsfree/terms.html</loc>
-    <lastmod>2025-12-28</lastmod>
-    <priority>0.50</priority>
-  </url>
-  <url>
-    <loc>https://jiban70.github.io/alltoolsfree/about.html</loc>
-    <lastmod>2025-12-28</lastmod>
-    <priority>0.50</priority>
-  </url>
+  <url><loc>https://jiban70.github.io/alltoolsfree/qr-generator.html</loc><priority>0.9</priority></url>
+  <url><loc>https://jiban70.github.io/alltoolsfree/youtube-metadata.html</loc><priority>0.9</priority></url>
+  <url><loc>https://jiban70.github.io/alltoolsfree/age-calculator.html</loc><priority>0.9</priority></url>
 </urlset>
