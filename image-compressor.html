@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Image Compressor | AllToolsFree™</title>
+    <style>
+        :root { --p: #3b82f6; --b: #020617; --c: #0f172a; --t: #f8fafc; --s: #64748b; }
+        body { background: var(--b); color: var(--t); font-family: sans-serif; padding: 40px 20px; text-align: center; }
+        .container { max-width: 600px; margin: auto; background: var(--c); padding: 30px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); }
+        .upload-box { border: 2px dashed var(--s); padding: 40px; border-radius: 15px; cursor: pointer; margin-bottom: 20px; }
+        #preview { display: none; margin-top: 20px; }
+        .stats { display: flex; justify-content: space-around; margin: 20px 0; font-size: 14px; color: var(--s); }
+        .btn { background: var(--p); color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold; display: inline-block; cursor: pointer; border: none; }
+        input[type="range"] { width: 100%; margin: 20px 0; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <a href="index.html" style="color: var(--p); text-decoration: none;">← Back to Home</a>
+    <h1>Image Compressor</h1>
+    <p>Reduce image file size by up to 90% without losing quality.</p>
+
+    <div class="upload-box" onclick="document.getElementById('fileInput').click()">
+        <p>Click to Upload Image</p>
+        <input type="file" id="fileInput" accept="image/*" hidden>
+    </div>
+
+    <div id="preview">
+        <div class="stats">
+            <div>Original: <span id="oldSize">0</span> KB</div>
+            <div>New: <span id="newSize">0</span> KB</div>
+        </div>
+        
+        <label>Quality: <span id="qVal">70</span>%</label>
+        <input type="range" id="quality" min="10" max="100" value="70">
+        
+        <canvas id="canvas" style="display:none;"></canvas>
+        <img id="outputImage" style="max-width: 100%; border-radius: 10px; margin-bottom: 20px;">
+        <br>
+        <a id="downloadBtn" class="btn">Download Compressed Image</a>
+    </div>
+</div>
+
+<script>
+    const fileInput = document.getElementById('fileInput');
+    const qualityInput = document.getElementById('quality');
+    const qVal = document.getElementById('qVal');
+    const preview = document.getElementById('preview');
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+
+    fileInput.addEventListener('change', handleUpload);
+    qualityInput.addEventListener('input', () => {
+        qVal.innerText = qualityInput.value;
+        compressImage();
+    });
+
+    let currentFile;
+
+    function handleUpload(e) {
+        currentFile = e.target.files[0];
+        if (currentFile) {
+            document.getElementById('oldSize').innerText = (currentFile.size / 1024).toFixed(2);
+            preview.style.display = 'block';
+            compressImage();
+        }
+    }
+
+    function compressImage() {
+        const reader = new FileReader();
+        reader.readAsDataURL(currentFile);
+        reader.onload = (event) => {
+            const img = new Image();
+            img.src = event.target.result;
+            img.onload = () => {
+                canvas.width = img.width;
+                canvas.height = img.height;
+                ctx.drawImage(img, 0, 0);
+                
+                const quality = qualityInput.value / 100;
+                const dataUrl = canvas.toDataURL('image/jpeg', quality);
+                
+                document.getElementById('outputImage').src = dataUrl;
+                
+                // Calculate new size
+                const head = 'data:image/jpeg;base64,';
+                const size = Math.round((dataUrl.length - head.length) * 3 / 4 / 1024);
+                document.getElementById('newSize').innerText = size;
+
+                const downloadBtn = document.getElementById('downloadBtn');
+                downloadBtn.href = dataUrl;
+                downloadBtn.download = "compressed-" + currentFile.name;
+            };
+        };
+    }
+</script>
+
+</body>
+</html>
