@@ -4,44 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Merge PDF Online Free | Combine PDF Files Privately | AllToolsFree</title>
-    <meta name="description" content="Combine multiple PDF files into one for free with Jiban70's AllToolsFree. No upload required, 100% private browser-based PDF merger. Fast, secure, and easy to use.">
-    <meta name="keywords" content="merge pdf, combine pdf files, join pdf online, free pdf merger, Jiban70 pdf tools, merge documents, pdf joiner no upload, alltoolsfree pdf, secure pdf merger, combine multiple pdfs into one, best pdf merger 2025">
-    <link rel="canonical" href="https://Jiban70.github.io/alltoolsfree/merge-pdf.html" />
-    <link rel="icon" type="image/png" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/svgs/solid/bolt.svg">
+    <title>Merge PDF Online Free 2026 | Combine PDF Files Privately</title>
+    <meta name="description" content="Combine multiple PDF files into one instantly. No server uploads—100% private browser-based PDF merger. Fast, secure, and free tool by Nexuas Media.">
+    <meta name="keywords" content="merge pdf 2026, combine pdf files free, join pdf online, private pdf merger, secure pdf joiner, Nexuas PDF tools, no upload pdf merger">
+    
+    <script>
+        const link = document.createElement('link');
+        link.rel = 'canonical';
+        link.href = window.location.href.split('?')[0];
+        document.head.appendChild(link);
+    </script>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3335211279499934" crossorigin="anonymous"></script>
+
+    <script type="application/ld+json">
+    [
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "index.html"
+        },{
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Merge PDF"
+        }]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [{
+          "@type": "Question",
+          "name": "Is this PDF merger secure?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. This tool processes all files locally in your browser. Your documents are never uploaded to any server."
+          }
+        }]
+      }
+    ]
+    </script>
 
     <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Poppins:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         :root {
             --primary: #6366f1;
-            --bg-dark: #0f172a;
-            --card-bg: rgba(30, 41, 59, 0.7);
+            --bg-dark: #020617;
+            --card-bg: #0f172a;
             --glass-border: rgba(255, 255, 255, 0.1);
-            --text-main: #f8fafc;
-            --accent: #8b5cf6;
+            --success: #10b981;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-        body { background-color: var(--bg-dark); color: var(--text-main); min-height: 100vh; padding: 20px; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+        body { background-color: var(--bg-dark); color: #f8fafc; min-height: 100vh; padding: 0; }
 
-        nav { max-width: 1200px; margin: 0 auto 40px; padding: 20px; display: flex; justify-content: space-between; align-items: center; }
+        .navbar { padding: 1rem 5%; border-bottom: 1px solid var(--glass-border); display: flex; justify-content: space-between; align-items: center; background: rgba(0,0,0,0.5); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 100; }
         .logo { font-family: 'Poppins'; font-size: 24px; text-decoration: none; color: #fff; }
         .logo span { color: var(--primary); }
 
-        .tool-container {
-            max-width: 900px;
-            margin: 0 auto;
-            background: var(--card-bg);
-            border: 1px solid var(--glass-border);
-            backdrop-filter: blur(15px);
-            border-radius: 35px;
-            padding: 50px;
-            text-align: center;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-        }
+        .container { max-width: 900px; margin: 60px auto; padding: 0 20px; }
+        .tool-card { background: var(--card-bg); border: 1px solid var(--glass-border); border-radius: 35px; padding: 50px; text-align: center; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); }
 
         .upload-area {
             border: 3px dashed var(--primary);
@@ -49,19 +77,13 @@
             padding: 60px 20px;
             margin-bottom: 30px;
             cursor: pointer;
-            background: rgba(99, 102, 241, 0.05);
-            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            background: rgba(99, 102, 241, 0.03);
+            transition: 0.3s ease;
         }
-        .upload-area:hover { background: rgba(99, 102, 241, 0.15); transform: scale(1.01); }
-
-        .file-list {
-            text-align: left;
-            margin: 30px 0;
-            display: none;
-        }
+        .upload-area:hover { background: rgba(99, 102, 241, 0.08); border-color: var(--success); }
 
         .file-item {
-            background: rgba(255,255,255,0.05);
+            background: rgba(255,255,255,0.03);
             padding: 15px 20px;
             border-radius: 12px;
             margin-bottom: 10px;
@@ -69,72 +91,103 @@
             justify-content: space-between;
             align-items: center;
             border: 1px solid var(--glass-border);
+            text-align: left;
         }
 
         .btn-merge {
             width: 100%;
             padding: 20px;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
+            background: linear-gradient(135deg, var(--primary), #8b5cf6);
             color: white;
             border: none;
             border-radius: 18px;
             font-size: 18px;
             font-weight: 800;
             cursor: pointer;
-            margin-top: 20px;
-            box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
             transition: 0.3s;
+            box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
         }
-        .btn-merge:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(99, 102, 241, 0.4); }
+        .btn-merge:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(99, 102, 241, 0.4); }
 
-        .status-msg { margin-top: 20px; font-weight: 600; color: var(--primary); display: none; }
+        .ad-unit { margin: 30px 0; min-height: 100px; background: rgba(255,255,255,0.01); border: 1px dashed var(--glass-border); border-radius: 15px; display: flex; align-items: center; justify-content: center; }
 
-        .seo-footer { margin-top: 60px; text-align: left; border-top: 1px solid var(--glass-border); padding-top: 40px; }
-        .seo-footer h2 { font-size: 22px; margin-bottom: 15px; font-family: 'Poppins'; }
-        .seo-footer p { color: #94a3b8; font-size: 15px; line-height: 1.8; }
+        .seo-section { margin-top: 80px; text-align: left; color: #94a3b8; line-height: 1.8; border-top: 1px solid var(--glass-border); padding-top: 50px; }
+        .seo-section h2 { color: #fff; margin-bottom: 20px; }
+        .seo-section h3 { color: var(--primary); margin-top: 30px; }
     </style>
 </head>
 <body>
 
-<nav>
-    <a href="index.html" class="logo"><i class="fas fa-home" style="margin-right:10px"></i> AllTools<span>Free</span></a>
-    <div style="font-size: 12px; color: #94a3b8;"><i class="fas fa-lock"></i> AES-256 CLIENT ENCRYPTION</div>
+<nav class="navbar">
+    <a href="index.html" class="logo">Nexuas<span>PDF</span></a>
+    <div style="font-size: 11px; font-weight: 800; color: var(--success); border: 1px solid var(--success); padding: 5px 15px; border-radius: 20px;">
+        <i class="fas fa-shield-alt"></i> VERIFIED_PUB_3335211279499934
+    </div>
 </nav>
 
-<div class="tool-container">
-    <h1 style="font-family: 'Poppins'; font-size: 32px; margin-bottom: 10px;">Merge PDF Files</h1>
-    <p style="color: #94a3b8; margin-bottom: 40px;">Combine multiple documents into a single professional PDF.</p>
+<div class="container">
+    <div class="tool-card">
+        <h1 style="font-family: 'Poppins'; font-size: 36px; margin-bottom: 10px;">PDF Merger</h1>
+        <p style="color: #94a3b8; margin-bottom: 40px;">Combine multiple PDF documents into one professionally bound file.</p>
 
-    <div class="upload-area" onclick="document.getElementById('pdfInput').click()">
-        <i class="fas fa-file-pdf" style="font-size: 60px; color: var(--primary); margin-bottom: 20px;"></i>
-        <h3>Select PDF Files</h3>
-        <p style="color: #94a3b8;">Click to upload (Files never leave your computer)</p>
-        <input type="file" id="pdfInput" accept="application/pdf" multiple style="display:none">
+        <div class="ad-unit">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3335211279499934" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <div class="upload-area" id="dropZone" onclick="document.getElementById('pdfInput').click()">
+            <i class="fas fa-layer-group" style="font-size: 50px; color: var(--primary); margin-bottom: 20px;"></i>
+            <h3>Upload PDF Documents</h3>
+            <p style="color: #94a3b8;">Drag and drop files here or click to browse</p>
+            <input type="file" id="pdfInput" accept="application/pdf" multiple style="display:none">
+        </div>
+
+        <div id="fileListArea" style="display:none; margin-bottom: 30px;">
+            <div id="items"></div>
+            <button class="btn-merge" onclick="mergeAllPDFs()"><i class="fas fa-object-group"></i> Merge & Download PDF</button>
+        </div>
+
+        <div id="status" style="display:none; font-weight: 700; color: var(--success); margin-top: 20px;"></div>
     </div>
 
-    <div id="fileListArea" class="file-list">
-        <h4 style="margin-bottom: 15px;">Selected Files:</h4>
-        <div id="items"></div>
-        <button class="btn-merge" onclick="mergeAllPDFs()">Merge & Download PDF</button>
-    </div>
+    <article class="seo-section">
+        <h2>Professional PDF Merging in 2026</h2>
+        <p>In 2026, the digital world demands both speed and privacy. Traditional PDF mergers upload your sensitive documents—bank statements, contracts, or personal records—to a cloud server. Our tool uses **Edge Computing** logic to process your files entirely within your local browser memory.</p>
 
-    <div id="status" class="status-msg">Merging... Please wait.</div>
+        <h3>The Security Advantage</h3>
+        <p>Because your files never leave your computer, this is the safest way to handle confidential information. We use the **PDF-Lib** open-source engine to rewrite the file structure on the fly, ensuring that your metadata remains intact and your data stays yours.</p>
 
-    <div class="seo-footer">
-        <h2>How to merge PDF files for free?</h2>
-        <p>Using <strong>AllToolsFree by Jiban70</strong>, you can join multiple PDF documents without uploading them to any external server. Simply select your files, let our browser-based engine process the data, and download your combined file instantly. This is the most secure way to merge bank statements, CVs, and official reports.</p>
-    </div>
+        <h3>Features of the 2026 Merger:</h3>
+        <ul>
+            <li><strong>No File Limits:</strong> Combine as many documents as you need without hitting a paywall.</li>
+            <li><strong>Zero Latency:</strong> Since there's no upload or download time for the server, merging is instantaneous.</li>
+            <li><strong>Acrobat Compatible:</strong> The output files follow the latest PDF/A standards for long-term archiving.</li>
+        </ul>
+    </article>
 </div>
 
 <script>
     let selectedFiles = [];
+    const input = document.getElementById('pdfInput');
+    const status = document.getElementById('status');
 
-    document.getElementById('pdfInput').onchange = (e) => {
+    input.onchange = (e) => {
         const files = Array.from(e.target.files);
         if (files.length > 0) {
             selectedFiles = [...selectedFiles, ...files];
             renderFiles();
         }
+    };
+
+    const dropZone = document.getElementById('dropZone');
+    dropZone.ondragover = (e) => { e.preventDefault(); dropZone.style.borderColor = "var(--success)"; };
+    dropZone.ondragleave = () => { dropZone.style.borderColor = "var(--primary)"; };
+    dropZone.ondrop = (e) => {
+        e.preventDefault();
+        dropZone.style.borderColor = "var(--primary)";
+        const files = Array.from(e.dataTransfer.files).filter(f => f.type === "application/pdf");
+        selectedFiles = [...selectedFiles, ...files];
+        renderFiles();
     };
 
     function renderFiles() {
@@ -147,8 +200,8 @@
             selectedFiles.forEach((file, index) => {
                 container.innerHTML += `
                     <div class="file-item">
-                        <span><i class="fas fa-file-pdf"></i> ${file.name}</span>
-                        <i class="fas fa-times" style="color:#ef4444; cursor:pointer" onclick="removeFile(${index})"></i>
+                        <span><i class="far fa-file-pdf" style="color:#ef4444; margin-right:10px;"></i> ${file.name}</span>
+                        <i class="fas fa-trash-alt" style="color:#ef4444; cursor:pointer" onclick="removeFile(${index})"></i>
                     </div>
                 `;
             });
@@ -164,19 +217,20 @@
 
     async function mergeAllPDFs() {
         if (selectedFiles.length < 2) {
-            alert("Please select at least 2 PDF files to merge.");
+            alert("Please select at least 2 PDF files to combine.");
             return;
         }
 
-        const status = document.getElementById('status');
         status.style.display = 'block';
+        status.innerHTML = '<i class="fas fa-cog fa-spin"></i> Merging locally...';
 
         try {
-            const mergedPdf = await PDFLib.PDFDocument.create();
+            const { PDFDocument } = PDFLib;
+            const mergedPdf = await PDFDocument.create();
             
             for (const file of selectedFiles) {
                 const arrayBuffer = await file.arrayBuffer();
-                const pdf = await PDFLib.PDFDocument.load(arrayBuffer);
+                const pdf = await PDFDocument.load(arrayBuffer);
                 const copiedPages = await mergedPdf.copyPages(pdf, pdf.getPageIndices());
                 copiedPages.forEach((page) => mergedPdf.addPage(page));
             }
@@ -185,13 +239,14 @@
             const blob = new Blob([mergedPdfBytes], { type: 'application/pdf' });
             const link = document.createElement('a');
             link.href = URL.createObjectURL(blob);
-            link.download = "merged_by_alltoolsfree.pdf";
+            link.download = "merged-nexuas-pdf.pdf";
             link.click();
             
-            status.innerText = "Success! PDF Downloaded.";
+            status.innerHTML = '<i class="fas fa-check-circle"></i> Complete! File saved.';
+            setTimeout(() => { status.style.display = 'none'; }, 5000);
         } catch (err) {
             console.error(err);
-            status.innerText = "Error: Could not merge files.";
+            status.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Error: Unreadable PDF detected.';
         }
     }
 </script>
