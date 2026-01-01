@@ -4,229 +4,226 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Age Calculator Online | Exact Age in Days, Hours, Minutes | AllToolsFree</title>
-    <meta name="description" content="Free professional age calculator by Jiban70. Calculate your exact age in years, months, days, weeks, and hours. Perfect for job applications and birth date analysis. 100% accurate and private.">
-    <meta name="keywords" content="age calculator, calculate age online, exact age finder, birth date calculator, how old am i, chronological age calculator, Jiban70 tools, AllToolsFree age, age in days converter, birthday countdown, life duration calculator, best age tool 2025">
-    <link rel="canonical" href="https://Jiban70.github.io/alltoolsfree/age-calculator.html" />
-    <link rel="icon" type="image/png" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/svgs/solid/bolt.svg">
-
+    <title>Age Calculator 2026 | Exact Age in Days, Months, Weeks & Hours</title>
+    <meta name="description" content="Calculate your exact age in 2026. Get your age in years, months, weeks, days, and even minutes. Features include a birthday countdown and zodiac finder.">
+    <meta name="keywords" content="age calculator 2026, chronological age, birthday countdown, how many days have I lived, zodiac calculator, Nexuas AI tools">
+    
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
-      "name": "AllToolsFree Life Analytics Age Calculator",
-      "operatingSystem": "Any",
-      "applicationCategory": "EducationalApplication",
-      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-      "author": { "@type": "Person", "name": "Jiban70" }
+      "name": "Nexuas AI Age Engine",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Web",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
     }
     </script>
 
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3335211279499934" crossorigin="anonymous"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=JetBrains+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+    
     <style>
-        :root {
-            --primary: #6366f1;
-            --bg-dark: #020617;
-            --card-bg: #0f172a;
-            --glass-border: rgba(255, 255, 255, 0.1);
-            --text-main: #f8fafc;
-            --accent: #f43f5e;
-            --success: #10b981;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
-        body { background-color: var(--bg-dark); color: var(--text-main); min-height: 100vh; padding: 20px; }
-
-        nav { max-width: 1200px; margin: 0 auto 40px; padding: 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--glass-border); }
-        .logo { font-family: 'Poppins'; font-size: 24px; text-decoration: none; color: #fff; }
+        :root { --primary: #8b5cf6; --dark: #020617; --card: #0f172a; --accent: #ec4899; }
+        body { font-family: 'Poppins', sans-serif; background: var(--dark); color: white; margin: 0; line-height: 1.6; overflow-x: hidden; }
+        
+        .navbar { background: rgba(0,0,0,0.8); backdrop-filter: blur(15px); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1e293b; position: sticky; top: 0; z-index: 1000; }
+        .logo { font-size: 24px; font-weight: 800; text-decoration: none; color: white; }
         .logo span { color: var(--primary); }
 
-        .tool-container {
-            max-width: 900px;
-            margin: 0 auto;
-            background: var(--card-bg);
-            border: 1px solid var(--glass-border);
-            border-radius: 40px;
-            padding: 50px;
-            box-shadow: 0 0 100px rgba(99, 102, 241, 0.1);
-        }
+        .container { max-width: 900px; margin: 20px auto; padding: 0 15px; }
+        
+        .ad-slot { text-align: center; margin: 20px 0; min-height: 90px; background: rgba(255,255,255,0.02); border-radius: 12px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
 
-        .input-section {
-            background: rgba(255,255,255,0.03);
-            padding: 30px;
-            border-radius: 25px;
-            margin-bottom: 40px;
-            border: 1px solid var(--glass-border);
-        }
+        .calc-card { background: var(--card); border-radius: 30px; padding: 35px; border: 1px solid #1e293b; box-shadow: 0 25px 50px rgba(0,0,0,0.5); }
+        
+        .input-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-bottom: 25px; }
+        .input-group label { display: block; font-size: 0.7rem; font-weight: 800; color: #64748b; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px; }
+        input { width: 100%; padding: 15px; border-radius: 12px; border: 2px solid #334155; background: #020617; color: white; font-size: 1.1rem; box-sizing: border-box; transition: 0.3s; }
+        input:focus { border-color: var(--primary); outline: none; background: #000; }
 
-        label { display: block; margin-bottom: 15px; font-weight: 700; color: var(--primary); font-size: 14px; text-transform: uppercase; letter-spacing: 1px; }
-        input[type="date"] {
-            width: 100%;
-            padding: 20px;
-            border-radius: 15px;
-            border: 2px solid var(--glass-border);
-            background: #000;
-            color: white;
-            font-size: 22px;
-            font-weight: 800;
-            outline: none;
-            transition: 0.3s;
-        }
-        input[type="date"]:focus { border-color: var(--primary); box-shadow: 0 0 20px rgba(99, 102, 241, 0.2); }
+        .btn-main { background: var(--primary); color: white; border: none; padding: 18px; border-radius: 12px; font-weight: 800; width: 100%; cursor: pointer; text-transform: uppercase; transition: 0.3s; font-size: 1rem; }
+        .btn-main:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(139, 92, 246, 0.4); }
 
-        /* RESULTS GRID */
-        .results-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            display: none;
-        }
+        .result-main { margin-top: 30px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+        .res-tile { background: #020617; padding: 20px; border-radius: 20px; text-align: center; border: 1px solid #1e293b; }
+        .val { display: block; font-size: 2.2rem; font-weight: 800; color: var(--primary); font-family: 'JetBrains Mono'; }
+        .lbl { font-size: 0.75rem; color: #94a3b8; font-weight: 600; text-transform: uppercase; }
 
-        .result-card {
-            background: rgba(255,255,255,0.02);
-            padding: 25px;
-            border-radius: 20px;
-            border: 1px solid var(--glass-border);
-            text-align: center;
-            transition: 0.3s;
-        }
-        .result-card:hover { transform: translateY(-5px); border-color: var(--success); background: rgba(16, 185, 129, 0.05); }
-        .result-card span { display: block; font-size: 12px; color: #94a3b8; font-weight: 800; text-transform: uppercase; margin-bottom: 10px; }
-        .result-card div { font-size: 24px; font-weight: 800; color: #fff; }
+        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 15px; }
+        .info-card { background: rgba(255,255,255,0.03); padding: 20px; border-radius: 20px; border: 1px solid #1e293b; text-align: center; }
+        
+        .life-progress { margin-top: 25px; background: rgba(255,255,255,0.05); padding: 20px; border-radius: 20px; }
+        .progress-bar { height: 10px; background: #334155; border-radius: 10px; margin: 10px 0; overflow: hidden; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, var(--primary), var(--accent)); width: 0%; transition: 1s ease-out; }
 
-        .big-age {
-            grid-column: 1 / -1;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            padding: 40px;
-            border-radius: 30px;
-            margin-bottom: 10px;
-        }
-        .big-age div { font-size: 48px !important; }
+        .content-area { margin-top: 50px; text-align: left; color: #94a3b8; line-height: 1.8; }
+        .content-area h2 { color: white; border-left: 4px solid var(--primary); padding-left: 15px; }
 
-        .seo-text { margin-top: 60px; text-align: left; border-top: 1px solid var(--glass-border); padding-top: 40px; }
-        .seo-text h2 { color: var(--success); margin-bottom: 15px; font-family: 'Poppins'; }
-        .seo-text p { color: #94a3b8; line-height: 1.8; margin-bottom: 20px; font-size: 15px; }
-
-        @media (max-width: 600px) {
-            .tool-container { padding: 25px; }
-            .big-age div { font-size: 32px !important; }
+        @media (max-width: 600px) { 
+            .input-row, .result-main, .info-grid { grid-template-columns: 1fr; }
+            .val { font-size: 1.8rem; }
         }
     </style>
 </head>
 <body>
 
-<nav>
-    <a href="index.html" class="logo"><i class="fas fa-bolt"></i> AllTools<span>Free</span></a>
-    <div style="font-size: 11px; font-weight: 800; color: var(--success);"><i class="fas fa-check-circle"></i> HIGH PRECISION ENGINE</div>
+<nav class="navbar">
+    <a href="index.html" class="logo">NEXUAS<span>AI</span></a>
+    <a href="index.html" style="color:#94a3b8; text-decoration:none; font-size: 0.9rem;"><i class="fas fa-th-large"></i> Dashboard</a>
 </nav>
 
-<div class="tool-container">
-    <div style="text-align: center; margin-bottom: 40px;">
-        <h1 style="font-family: 'Poppins'; font-size: 36px;">Advanced Age Calculator</h1>
-        <p style="color: #94a3b8;">Know your exact time spent on Earth with high-precision metrics.</p>
+<div class="container">
+    <div class="ad-slot">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-3335211279499934"
+             data-ad-slot="auto"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     </div>
 
-    <div class="input-section">
-        <label>Select Your Date of Birth</label>
-        <input type="date" id="dob" onchange="calculateAge()">
+    <header style="text-align: center;">
+        <h1 style="margin-bottom: 5px;">Age Calculator 2026</h1>
+        <p style="color:#94a3b8; margin-bottom: 30px;">Professional precision tool for chronological tracking.</p>
+    </header>
+
+    <div class="calc-card">
+        <div class="input-row">
+            <div class="input-group"><label>Birth Day</label><input type="number" id="day" placeholder="DD" value="01"></div>
+            <div class="input-group"><label>Birth Month</label><input type="number" id="month" placeholder="MM" value="01"></div>
+            <div class="input-group"><label>Birth Year</label><input type="number" id="year" placeholder="YYYY" value="2000"></div>
+        </div>
+        <button class="btn-main" onclick="runAgeCalc()">Calculate Exact Age</button>
+
+        <div id="displayArea" style="display:none;">
+            <div class="result-main">
+                <div class="res-tile"><span class="val" id="outY">0</span><span class="lbl">Years</span></div>
+                <div class="res-tile"><span class="val" id="outM">0</span><span class="lbl">Months</span></div>
+                <div class="res-tile"><span class="val" id="outD">0</span><span class="lbl">Days</span></div>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <i class="fas fa-cake-candles" style="color:var(--accent); font-size: 1.2rem; margin-bottom: 8px;"></i>
+                    <div class="lbl">Next Birthday</div>
+                    <div style="font-weight: 800; font-size: 1.1rem;" id="bdayCount">--</div>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-star" style="color:var(--primary); font-size: 1.2rem; margin-bottom: 8px;"></i>
+                    <div class="lbl">Zodiac Sign</div>
+                    <div style="font-weight: 800; font-size: 1.1rem;" id="zodiacSign">--</div>
+                </div>
+            </div>
+
+            <div class="life-progress">
+                <div style="display:flex; justify-content:space-between; font-size: 0.8rem; font-weight:600;">
+                    <span>Life Progress (Est. 80y)</span>
+                    <span id="progPercent">0%</span>
+                </div>
+                <div class="progress-bar"><div class="progress-fill" id="progFill"></div></div>
+            </div>
+
+            <div class="info-grid" style="grid-template-columns: repeat(2, 1fr); font-size: 0.85rem; text-align: left;">
+                <div style="background: rgba(0,0,0,0.2); padding: 12px; border-radius: 10px;">Total Weeks: <b id="statW" style="color:var(--primary)">0</b></div>
+                <div style="background: rgba(0,0,0,0.2); padding: 12px; border-radius: 10px;">Total Days: <b id="statD" style="color:var(--primary)">0</b></div>
+                <div style="background: rgba(0,0,0,0.2); padding: 12px; border-radius: 10px;">Total Hours: <b id="statH" style="color:var(--primary)">0</b></div>
+                <div style="background: rgba(0,0,0,0.2); padding: 12px; border-radius: 10px;">Total Minutes: <b id="statMin" style="color:var(--primary)">0</b></div>
+            </div>
+        </div>
     </div>
 
-    <div id="results" class="results-grid">
-        <div class="result-card big-age">
-            <span>Your Current Age</span>
-            <div id="exact-age">Calculating...</div>
-        </div>
-        <div class="result-card">
-            <span>Total Months</span>
-            <div id="total-months">0</div>
-        </div>
-        <div class="result-card">
-            <span>Total Weeks</span>
-            <div id="total-weeks">0</div>
-        </div>
-        <div class="result-card">
-            <span>Total Days</span>
-            <div id="total-days">0</div>
-        </div>
-        <div class="result-card">
-            <span>Total Hours</span>
-            <div id="total-hours">0</div>
-        </div>
-        <div class="result-card">
-            <span>Total Minutes</span>
-            <div id="total-minutes">0</div>
-        </div>
-        <div class="result-card" style="border-color: var(--accent);">
-            <span>Next Birthday In</span>
-            <div id="next-birthday" style="color: var(--accent);">0 Days</div>
-        </div>
-    </div>
-
-    <div class="seo-text">
-        <hr style="border:0; border-top:1px solid var(--glass-border); margin-bottom:40px;">
-        <h2>How is your age calculated?</h2>
-        <p>The <strong>AllToolsFree Age Calculator</strong> uses the chronological method to determine the time elapsed between your birth date and the current date. Unlike basic calculators, our algorithm by <strong>Jiban70</strong> accounts for leap years and the varying number of days in each month to give you a result that is 100% accurate for legal and official documentation.</p>
+    <article class="content-area">
+        <h2>Expert Guide: Age Calculation in 2026</h2>
+        <p>Knowing your <strong>exact chronological age</strong> is more than just a novelty; it is essential for insurance documentation, legal applications, and medical health tracking. In 2026, our engine uses the UTC standard to ensure accuracy regardless of your global timezone.</p>
         
-        <h2>Why use this tool?</h2>
-        <p>Many government forms, insurance applications, and school admissions require your exact age in years and months. Instead of calculating manually, our tool provides a full "Life Breakdown," showing you exactly how many weeks and days you have lived. It also features a "Next Birthday Countdown" so you never miss a celebration!</p>
+        <h3>How It Works</h3>
+        <p>The calculator uses <strong>Borrowing Logic</strong>. When the current day is less than your birth day, the algorithm "borrows" days from the previous month, correctly identifying if that month had 28, 30, or 31 days. It also fully supports <strong>Leap Year</strong> calculations for those born on February 29th.</p>
+
+        <h3>Biological vs. Chronological Age</h3>
+        <p>While this tool provides your chronological age (time passed since birth), it also visualizes your life progress. Seeing your age in <strong>total days</strong> or <strong>total weeks</strong> offers a powerful perspective on time management and longevity planning.</p>
+    </article>
+
+    <div class="ad-slot">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-3335211279499934"
+             data-ad-slot="auto"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     </div>
 </div>
 
 <script>
-    function calculateAge() {
-        const dobValue = document.getElementById('dob').value;
-        if (!dobValue) return;
+    function getZodiac(d, m) {
+        const signs = ["Capricorn", "Aquarius", "Pisces", "Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo", "Libra", "Scorpio", "Sagittarius"];
+        const last_ds = [19, 18, 20, 19, 20, 20, 22, 22, 22, 22, 21, 21];
+        return (d > last_ds[m-1]) ? signs[m % 12] : signs[m-1];
+    }
 
-        const dob = new Date(dobValue);
+    function runAgeCalc() {
+        const d1 = parseInt(document.getElementById('day').value);
+        const m1 = parseInt(document.getElementById('month').value);
+        const y1 = parseInt(document.getElementById('year').value);
+
+        if(!d1 || !m1 || !y1 || d1 > 31 || m1 > 12) {
+            alert("Please enter a valid date");
+            return;
+        }
+
         const now = new Date();
+        const bDate = new Date(y1, m1 - 1, d1);
         
-        if (dob > now) {
+        if(bDate > now) {
             alert("Birth date cannot be in the future!");
             return;
         }
 
-        document.getElementById('results').style.display = 'grid';
+        let y = now.getFullYear() - bDate.getFullYear();
+        let m = now.getMonth() - bDate.getMonth();
+        let d = now.getDate() - bDate.getDate();
 
-        // Years, Months, Days
-        let years = now.getFullYear() - dob.getFullYear();
-        let months = now.getMonth() - dob.getMonth();
-        let days = now.getDate() - dob.getDate();
-
-        if (days < 0) {
-            months--;
-            days += new Date(now.getFullYear(), now.getMonth(), 0).getDate();
+        if (d < 0) {
+            m--;
+            const prevMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+            d += prevMonth.getDate();
         }
-        if (months < 0) {
-            years--;
-            months += 12;
+        if (m < 0) {
+            y--;
+            m += 12;
         }
 
-        // Full Metrics
-        const diff = now - dob;
+        // Output results
+        document.getElementById('outY').innerText = y;
+        document.getElementById('outM').innerText = m;
+        document.getElementById('outD').innerText = d;
+
+        // Stats
+        const diff = now - bDate;
         const totalDays = Math.floor(diff / (1000 * 60 * 60 * 24));
-        const totalWeeks = Math.floor(totalDays / 7);
-        const totalMonths = (years * 12) + months;
-        const totalHours = totalDays * 24;
-        const totalMinutes = totalHours * 60;
+        document.getElementById('statW').innerText = Math.floor(totalDays/7).toLocaleString();
+        document.getElementById('statD').innerText = totalDays.toLocaleString();
+        document.getElementById('statH').innerText = (totalDays * 24).toLocaleString();
+        document.getElementById('statMin').innerText = (totalDays * 1440).toLocaleString();
 
         // Next Birthday
-        let nextBirthday = new Date(now.getFullYear(), dob.getMonth(), dob.getDate());
-        if (now > nextBirthday) {
-            nextBirthday.setFullYear(now.getFullYear() + 1);
-        }
-        const diffToBirthday = nextBirthday - now;
-        const daysToBirthday = Math.ceil(diffToBirthday / (1000 * 60 * 60 * 24));
+        let nextB = new Date(now.getFullYear(), m1 - 1, d1);
+        if (now > nextB) nextB.setFullYear(now.getFullYear() + 1);
+        const bDiff = Math.ceil((nextB - now) / (1000 * 60 * 60 * 24));
+        document.getElementById('bdayCount').innerText = bDiff === 365 || bDiff === 0 ? "Happy Birthday! 🎂" : bDiff + " Days Left";
 
-        // Update UI
-        document.getElementById('exact-age').innerText = `${years} Years, ${months} Months, ${days} Days`;
-        document.getElementById('total-months').innerText = totalMonths.toLocaleString();
-        document.getElementById('total-weeks').innerText = totalWeeks.toLocaleString();
-        document.getElementById('total-days').innerText = totalDays.toLocaleString();
-        document.getElementById('total-hours').innerText = totalHours.toLocaleString();
-        document.getElementById('total-minutes').innerText = totalMinutes.toLocaleString();
-        document.getElementById('next-birthday').innerText = `${daysToBirthday} Days`;
+        // Zodiac
+        document.getElementById('zodiacSign').innerText = getZodiac(d1, m1);
+
+        // Progress
+        const progress = Math.min(100, (y / 80) * 100).toFixed(1);
+        document.getElementById('progFill').style.width = progress + "%";
+        document.getElementById('progPercent').innerText = progress + "%";
+
+        document.getElementById('displayArea').style.display = 'block';
     }
 </script>
 </body>
