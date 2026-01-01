@@ -84,24 +84,24 @@
 <nav>
     <a href="index.html" class="logo">AllTools<span>Free</span></a>
     <div style="font-size: 11px; font-weight: 800; color: #10b981; border: 1px solid #10b981; padding: 5px 12px; border-radius: 20px;">
-        <i class="fas fa-shield-alt"></i> PRIVATE BROWSER BILLING
+        <i class="fas fa-file-invoice-dollar"></i> SECURE INVOICE GENERATOR
     </div>
 </nav>
 
 <div class="toolbar">
     <div style="flex-grow: 1;">
-        <label style="font-size: 10px; font-weight: 800; color: var(--primary); text-transform: uppercase; margin-bottom: 8px; display: block;">Select Currency</label>
+        <label style="font-size: 10px; font-weight: 800; color: var(--primary); text-transform: uppercase; margin-bottom: 8px; display: block;">Select Billing Currency</label>
         <select class="currency-select" id="currency" onchange="updateCalculations()">
-            <option value="$">USD - Dollar ($)</option>
-            <option value="€">EUR - Euro (€)</option>
-            <option value="£">GBP - Pound (£)</option>
-            <option value="₹">INR - Rupee (₹)</option>
-            <option value="৳">BDT - Taka (৳)</option>
-            <option value="د.إ">AED - Dirham (د.إ)</option>
+            <option value="$">USD ($)</option>
+            <option value="€">EUR (€)</option>
+            <option value="£">GBP (£)</option>
+            <option value="₹">INR (₹)</option>
+            <option value="৳">BDT (৳)</option>
+            <option value="د.إ">AED (د.إ)</option>
         </select>
     </div>
     <button onclick="window.print()" class="btn-add" style="background: #10b981; height: 50px; padding: 0 30px; font-size: 15px;">
-        <i class="fas fa-file-pdf"></i> Download PDF
+        <i class="fas fa-file-pdf"></i> Download PDF Invoice
     </button>
 </div>
 
@@ -129,7 +129,7 @@
             <textarea placeholder="Client Address & Contact" rows="3"></textarea>
         </div>
         <div>
-            <label style="font-size: 11px; font-weight: 800; color: var(--primary); text-transform: uppercase;">Invoice Details:</label>
+            <label style="font-size: 11px; font-weight: 800; color: var(--primary); text-transform: uppercase;">Payment Terms:</label>
             <div style="display: flex; gap: 10px;">
                 <input type="date" value="2026-01-01">
                 <input type="text" placeholder="Due Date">
@@ -144,7 +144,7 @@
                 <th style="width: 55%;">Description</th>
                 <th>Qty</th>
                 <th>Unit Price</th>
-                <th style="text-align: right;">Amount</th>
+                <th style="text-align: right;">Total</th>
                 <th class="print-hide"></th>
             </tr>
         </thead>
@@ -154,7 +154,7 @@
                 <td><input type="number" value="1" class="qty" oninput="updateCalculations()"></td>
                 <td><input type="number" value="0" class="price" oninput="updateCalculations()"></td>
                 <td class="row-total" style="text-align: right; font-weight: 700;">0.00</td>
-                <td><button class="btn-remove" onclick="removeRow(this)"><i class="fas fa-trash-alt"></i></button></td>
+                <td><button class="btn-remove" onclick="removeRow(this)"><i class="fas fa-trash"></i></button></td>
             </tr>
         </tbody>
     </table>
@@ -166,31 +166,33 @@
             <span id="subtotal">0.00</span>
         </div>
         <div class="total-row">
-            <span>Tax (%)</span>
+            <span>Tax Rate (%)</span>
             <input type="number" id="taxRate" value="0" style="width: 70px; padding: 5px; text-align: right;" oninput="updateCalculations()">
         </div>
         <div class="total-row grand-total">
-            <span>Balance Due</span>
+            <span>Total Balance Due</span>
             <span id="grandTotal">0.00</span>
         </div>
     </div>
 </div>
 
 <article class="seo-content">
-    <h2>Free Global Invoice Maker 2026</h2>
-    <p>The <strong>AllToolsFree Invoice Engine</strong> is designed for the modern freelance economy. Whether you are billing international clients in USD, EUR, or INR, our tool provides a professional, clean solution instantly.</p>
+    <h2>AllToolsFree: Professional Invoice Maker 2026</h2>
+    <p>Our <strong>Invoice Maker</strong> is built for the global freelance economy. Whether you need a simple receipt or a complex VAT/GST compliant document, this tool provides a clean and professional layout instantly. It is optimized for standard A4 printing and digital sharing.</p>
     
-    [attachment_0](attachment)
+    
 
-    <h3>Secure & Private Billing</h3>
-    <p>Financial privacy is essential. Unlike cloud-based accounting software, we never store your client data or financial figures. All processing happens locally in your browser. Once you save your PDF and close the tab, your data is cleared, keeping your business records 100% confidential.</p>
+    <h3>Financial Privacy by Design</h3>
+    <p>We believe your business financials are your business alone. Unlike most online billing software, **AllToolsFree never uploads your data to a cloud**. Every name, number, and item description you enter stays strictly within your browser's local cache. Once you download your PDF and close the window, your data is wiped clean.</p>
     
-    <h3>Key Features:</h3>
+    <h3>Features for Modern Business:</h3>
     <ul>
-        <li><strong>Multi-Currency Support:</strong> Switch between global currencies with one click.</li>
-        <li><strong>No Watermarks:</strong> Generate clean, professional PDFs for free.</li>
-        <li><strong>Tax Calculations:</strong> Built-in percentage calculator for VAT, GST, or Sales Tax.</li>
+        <li><strong>Multi-Currency Support:</strong> Easily switch between global symbols like $, €, £, and ₹.</li>
+        <li><strong>Automated Math:</strong> Real-time calculation of line totals, tax percentages, and grand totals.</li>
+        <li><strong>A4 Print Ready:</strong> Perfect margins designed for saving as PDF or physical printing.</li>
     </ul>
+
+    
 </article>
 
 <script>
@@ -202,7 +204,7 @@
             <td><input type="number" value="1" class="qty" oninput="updateCalculations()"></td>
             <td><input type="number" value="0" class="price" oninput="updateCalculations()"></td>
             <td class="row-total" style="text-align: right; font-weight: 700;">0.00</td>
-            <td><button class="btn-remove" onclick="removeRow(this)"><i class="fas fa-trash-alt"></i></button></td>
+            <td><button class="btn-remove" onclick="removeRow(this)"><i class="fas fa-trash"></i></button></td>
         `;
         tbody.appendChild(tr);
         updateCalculations();
