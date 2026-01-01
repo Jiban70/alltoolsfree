@@ -1,26 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://jiban70.github.io/</loc>
-    <lastmod>2025-12-29</lastmod>
-    <priority>1.00</priority>
-  </url>
-  
-  <url>
-    <loc>https://jiban70.github.io/contact.html</loc>
-    <lastmod>2025-12-29</lastmod>
-    <priority>0.80</priority>
-  </url>
+  <url><loc>https://jiban70.github.io/index.html</loc><priority>1.00</priority></url>
+  <url><loc>https://jiban70.github.io/about.html</loc><priority>0.80</priority></url>
+  <url><loc>https://jiban70.github.io/contact.html</loc><priority>0.80</priority></url>
+  <url><loc>https://jiban70.github.io/privacy.html</loc><priority>0.50</priority></url>
+  <url><loc>https://jiban70.github.io/google507eed84ff305819.html</loc><priority>0.10</priority></url>
 
-  <url>
-    <loc>https://jiban70.github.io/privacy.html</loc>
-    <lastmod>2025-12-29</lastmod>
-    <priority>0.50</priority>
-  </url>
+  <url><loc>https://jiban70.github.io/merge-pdf.html</loc><priority>0.90</priority></url>
+  <url><loc>https://jiban70.github.io/split-pdf.html</loc><priority>0.90</priority></url>
+  <url><loc>https://jiban70.github.io/image-to-pdf.html</loc><priority>0.90</priority></url>
+  <url><loc>https://jiban70.github.io/pdf-to-image.html</loc><priority>0.90</priority></url>
+  <url><loc>https://jiban70.github.io/sign-pdf.html</loc><priority>0.90</priority></url>
 
-  <url>
-    <loc>https://jiban70.github.io/bg-remover.html</loc>
-    <lastmod>2025-12-29</lastmod>
-    <priority>0.90</priority>
-  </url>
+  <url><loc>https://jiban70.github.io/image-compressor.html</loc><priority>0.90</priority></url>
+  <url><loc>https://jiban70.github.io/heic-to-jpg.html</loc><priority>0.90</priority></url>
+  <url><loc>https://jiban70.github.io/png-to-jpg-converter.html</loc><priority>0.80</priority></url>
+  <url><loc>https://jiban70.github.io/jpg-to-png-converter.html</loc><priority>0.80</priority></url>
+  <url><loc>https://jiban70.github.io/webp-to-jpg-converter.html</loc><priority>0.80</priority></url>
+  <url><loc>https://jiban70.github.io/image-resizer-social-media.html</loc><priority>0.80</priority></url>
+  <url><loc>https://jiban70.github.io/photo-watermark-adder.html</loc><priority>0.70</priority></url>
+  <url><loc>https://jiban70.github.io/background-blur-tool.html</loc><priority>0.70</priority></url>
+  <url><loc>https://jiban70.github.io/profile-picture-circle-cropper.html</loc><priority>0.70</priority></url>
+  <url><loc>https://jiban70.github.io/meme-maker.html</loc><priority>0.70</priority></url>
+  <url><loc>https://jiban70.github.io/pp-photo-maker.html</loc><priority>0.80</priority></url>
+
+  <url><loc>https://jiban70.github.io/roi-calculator.html</loc><priority>0.90</priority></url>
+  <url><loc>https://jiban70.github.io/investment-roi-calculator.html</loc><priority>0.85</priority></url>
+  <url><loc>https://jiban70.github.io/salary-calculator.html</loc><priority>0.85</priority></url>
+  <url><loc>https://jiban70.github.io/gst-calculator.html</loc><priority>0.85</priority></url>
+  <url><loc>https://jiban70.github.io/vat-calculator.html</loc><priority>0.80</priority></url>
+  <url><loc>https://jiban70.github.io/compound-interest-calculator.html</loc><priority>0.85</priority></url>
+  <url><loc>https://jiban70.github.io/break-even-calculator.html</loc><priority>0.80</priority></url>
+  <url><loc>https://jiban70.github.io/fixed-deposit-calculator.html</loc><priority>0.80</priority></url>
+  <url><loc>https://jiban70.github.io/mutual-fund-calculator.html</loc><priority>0.80</priority></url>
+  <url><loc>https://jiban70.github.io/discount-calculator.html</loc><priority>0.80</priority></url>
+  <url><loc>https://jiban70.github.io/invoice-maker.html</loc><priority>0.85</priority></url>
+  <url><loc>https://jiban70.github.io/finance-calc.html</loc><priority>0.80</priority></url>
+  <url><loc>https://jiban70.github.io/hourly-wage-converter.html</loc><priority>0.75</priority></url>
+  <url><loc>https://jiban70.github.io/sale-price-calculator.html</loc><priority>0.75</priority></url>
+  <url><loc>https://jiban70.github.io/sales-tax-calculator.html</loc><priority>0.75</priority></url>
+  <url><loc>https://jiban70.github.io/tip-calculator.html</loc><priority>0.75</priority></url>
+  <url><loc>https://jiban70.github.io/percent-calculator.html</loc><priority>0.75</priority></url>
+
+  <url><loc>https://jiban70.github.io/plagiarism-checker.html</loc><priority>0.90</priority></url>
+  <url><loc>https://jiban70.github.io/qr-generator.html</loc><priority>0.90</priority></url>
+  <url><loc>https://jiban70.github.io/password-generator.html</loc><priority>0.80</priority></url>
+  <url><loc>https://jiban70.github.io/word-counter.html</loc><priority>0.80</priority></url>
+  <url><loc>https://jiban70.github.io/keyword-density-checker.html</loc><priority>0.75</priority></url>
+  <url><loc>https://jiban70.github.io/youtube-thumbnail-downloader.html</loc><priority>0.85</priority></url>
+  <url><loc>https://jiban70.github.io/instagram-story-maker.html</loc><priority>0.75</priority></url>
+  <url><loc>https://jiban70.github.io/resume-builder.html</loc><priority>0.90</priority></url>
+  <url><loc>https://jiban70.github.io/lorem-ipsum-generator.html</loc><priority>0.70</priority></url>
+  <url><loc>https://jiban70.github.io/json-formatter.html</loc><priority>0.85</priority></url>
+  <url><loc>https://jiban70.github.io/youtube-metadata.html</loc><priority>0.80</priority></url>
+  <url><loc>https://jiban70.github.io/whatsapp-direct-link-generator.html</loc><priority>0.80</priority></url>
+  <url><loc>https://jiban70.github.io/readability-score-calculator.html</loc><priority>0.75</priority></url>
+  <url><loc>https://jiban70.github.io/character-counter.html</loc><priority>0.70</priority></url>
+  <url><loc>https://jiban70.github.io/case-converter.html</loc><priority>0.70</priority></url>
+  <url><loc>https://jiban70.github.io/binary-to-text.html</loc><priority>0.70</priority></url>
+  <url><loc>https://jiban70.github.io/password-strength-checker.html</loc><priority>0.75</priority></url>
+  <url><loc>https://jiban70.github.io/clickbait-title-generator.html</loc><priority>0.70</priority></url>
+  <url><loc>https://jiban70.github.io/email-signature-generator.html</loc><priority>0.75</priority></url>
+  <url><loc>https://jiban70.github.io/social-media-preview-tool.html</loc><priority>0.70</priority></url>
+  <url><loc>https://jiban70.github.io/tiktok-username-generator.html</loc><priority>0.75</priority></url>
+  <url><loc>https://jiban70.github.io/instagram-font-generator.html</loc><priority>0.75</priority></url>
+
+  <url><loc>https://jiban70.github.io/bmi-health-risk-calculator.html</loc><priority>0.85</priority></url>
+  <url><loc>https://jiban70.github.io/bmr-calculator.html</loc><priority>0.85</priority></url>
+  <url><loc>https://jiban70.github.io/age%20calculator.html</loc><priority>0.85</priority></url>
+  <url><loc>https://jiban70.github.io/pregnancy-due-date-calculator.html</loc><priority>0.80</priority></url>
+
+  <url><loc>https://jiban70.github.io/privacy-policy-generator.html</loc><priority>0.80</priority></url>
+  <url><loc>https://jiban70.github.io/terms-and-conditions-generator.html</loc><priority>0.80</priority></url>
+  <url><loc>https://jiban70.github.io/disclaimer-generator.html</loc><priority>0.80</priority></url>
+  <url><loc>https://jiban70.github.io/profile-maker.html</loc><priority>0.75</priority></url>
+
+  <url><loc>https://jiban70.github.io/unit-converter.html</loc><priority>0.80</priority></url>
+  <url><loc>https://jiban70.github.io/days-between-dates-calculator.html</loc><priority>0.75</priority></url>
+  <url><loc>https://jiban70.github.io/countdown-timer-generator.html</loc><priority>0.75</priority></url>
 </urlset>
