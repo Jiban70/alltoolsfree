@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Crypto Profit Calculator 2026 | Calculate ROI, Fees & Gains | AllToolsFree</title>
+    <meta name="description" content="Calculate your crypto profits and losses instantly. Includes investment fees, exit fees, and ROI percentage. Supports Bitcoin, Ethereum, and all altcoins. 100% Free.">
+    <meta name="keywords" content="crypto profit calculator 2026, bitcoin profit tool, ethereum ROI calculator, crypto fee calculator, AllToolsFree, crypto tax estimator, crypto gain calculator Nepal, crypto investment tool India">
+    <meta name="author" content="AllToolsFree">
+    <link rel="canonical" href="https://jiban70.github.io/crypto-profit-calculator.html" />
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3335211279499934" crossorigin="anonymous"></script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FinancialCalculator",
+      "name": "Crypto Profit Calculator",
+      "url": "https://jiban70.github.io/crypto-profit-calculator.html",
+      "description": "Calculate cryptocurrency investment returns including exchange fees and ROI.",
+      "category": "Finance",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root { 
+            --primary: #f59e0b; 
+            --accent: #10b981; 
+            --danger: #ef4444;
+            --bg: #020617; 
+            --card: #0f172a; 
+            --border: #334155;
+            --shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+        body { background-color: var(--bg); color: #f8fafc; line-height: 1.6; }
+
+        nav { 
+            padding: 1rem 5%; 
+            background: rgba(2, 6, 23, 0.95); 
+            backdrop-filter: blur(12px); 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+            border-bottom: 1px solid var(--border); 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+        }
+        .logo { 
+            font-size: 1.5rem; 
+            font-weight: 800; 
+            color: #fff; 
+            text-decoration: none; 
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .logo span { color: var(--primary); }
+
+        .container { 
+            max-width: 1200px; 
+            margin: 2rem auto; 
+            padding: 0 1rem; 
+        }
+        
+        .main-grid { 
+            display: grid; 
+            grid-template-columns: 1.2fr 1fr; 
+            gap: 2rem; 
+            margin-bottom: 2rem;
+        }
+        
+        .input-card { 
+            background: var(--card); 
+            border-radius: 20px; 
+            padding: 2rem; 
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+        }
+        
+        .result-card { 
+            background: rgba(255,255,255,0.02); 
+            border-radius: 20px; 
+            padding: 2rem; 
+            border: 2px dashed var(--border); 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center;
+            box-shadow: var(--shadow);
+        }
+
+        .form-group { margin-bottom: 1.5rem; }
+        label { 
+            display: block; 
+            font-size: 0.75rem; 
+            font-weight: 800; 
+            color: #94a3b8; 
+            text-transform: uppercase; 
+            margin-bottom: 0.5rem; 
+            letter-spacing: 0.5px; 
+        }
+        input { 
+            width: 100%; 
+            background: #1e293b; 
+            border: 1px solid var(--border); 
+            padding: 14px; 
+            border-radius: 12px; 
+            color: #fff; 
+            font-family: 'JetBrains Mono', monospace; 
+            font-size: 1rem; 
+            outline: none;
+            transition: all 0.3s;
+        }
+        input:focus { 
+            border-color: var(--primary); 
+            box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.2);
+        }
+
+        .profit-value { 
+            font-size: 3.5rem; 
+            font-weight: 800; 
+            font-family: 'JetBrains Mono'; 
+            margin: 15px 0;
+            text-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        .roi-badge { 
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 20px; 
+            border-radius: 50px; 
+            font-weight: 800; 
+            font-size: 0.9rem; 
+            margin-bottom: 1rem; 
+        }
+        .roi-up { 
+            color: var(--accent); 
+            background: rgba(16, 185, 129, 0.1); 
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+        .roi-down { 
+            color: var(--danger); 
+            background: rgba(239, 68, 68, 0.1); 
+            border: 1px solid rgba(239, 68, 68, 0.3);
+        }
+
+        .stat-line { 
+            display: flex; 
+            justify-content: space-between; 
+            margin-bottom: 12px; 
+            padding-bottom: 12px; 
+            border-bottom: 1px solid rgba(255,255,255,0.05); 
+        }
+        .stat-line span { color: #94a3b8; font-size: 0.9rem; }
+        .stat-line b { font-weight: 700; color: #fff; font-family: 'JetBrains Mono'; }
+
+        .seo-content { 
+            margin-top: 3rem; 
+            padding: 2rem; 
+            background: rgba(255,255,255,0.02); 
+            border-radius: 20px; 
+            color: #94a3b8; 
+            border: 1px solid var(--border);
+        }
+        .seo-content h2 { 
+            color: #fff; 
+            margin-bottom: 1.5rem; 
+            position: relative;
+            padding-bottom: 10px;
+        }
+        .seo-content h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+        
+        .coin-selector {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .coin-btn {
+            flex: 1;
+            padding: 12px;
+            background: #1e293b;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            color: #94a3b8;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+        }
+        .coin-btn.active {
+            background: rgba(245, 158, 11, 0.1);
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+        
+        .fee-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        
+        .ad-container { 
+            text-align: center; 
+            margin: 2rem 0; 
+        }
+        
+        .profit-breakdown {
+            margin-top: 1.5rem;
+            padding: 1.5rem;
+            background: rgba(255,255,255,0.03);
+            border-radius: 15px;
+            border: 1px solid rgba(245, 158, 11, 0.2);
+        }
+        
+        @media (max-width: 850px) { 
+            .main-grid { 
+                grid-template-columns: 1fr; 
+            }
+            .fee-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="index.html" class="logo">
+        <i class="fas fa-chart-line"></i>
+        AllTools<span>Free</span>
+    </a>
+    <div style="font-size: 0.8rem; font-weight: 800; color: var(--primary); background: rgba(245, 158, 11, 0.1); padding: 8px 16px; border-radius: 50px; border: 1px solid var(--primary);">
+        <i class="fab fa-bitcoin"></i> CRYPTO ENGINE 2026
+    </div>
+</nav>
+
+<div class="container">
+    <div class="ad-container">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3335211279499934"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <div class="main-grid">
+        <div class="input-card">
+            <h3 style="color: #fff; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 10px;">
+                <i class="fas fa-coins" style="color: var(--primary);"></i>
+                Investment Details
+            </h3>
+            
+            <div class="coin-selector">
+                <button class="coin-btn active" onclick="selectCoin('BTC')">
+                    <i class="fab fa-bitcoin"></i> BTC
+                </button>
+                <button class="coin-btn" onclick="selectCoin('ETH')">
+                    <i class="fab fa-ethereum"></i> ETH
+                </button>
+                <button class="coin-btn" onclick="selectCoin('SOL')">
+                    <i class="fas fa-fire"></i> SOL
+                </button>
+            </div>
+            
+            <div class="form-group">
+                <label><i class="fas fa-dollar-sign"></i> Currency Symbol</label>
+                <input type="text" id="cur" value="$" placeholder="$ or ₹ or €" oninput="calculate()">
+            </div>
+            
+            <div class="form-group">
+                <label><i class="fas fa-money-bill-wave"></i> Investment Amount</label>
+                <input type="number" id="invested" value="1000" min="1" step="10" oninput="calculate()">
+            </div>
+            
+            <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                <div>
+                    <label><i class="fas fa-arrow-down"></i> Buy Price</label>
+                    <input type="number" id="buyPrice" value="50000" min="0.001" step="0.01" oninput="calculate()">
+                </div>
+                <div>
+                    <label><i class="fas fa-arrow-up"></i> Sell Price</label>
+                    <input type="number" id="sellPrice" value="65000" min="0.001" step="0.01" oninput="calculate()">
+                </div>
+            </div>
+            
+            <h4 style="color: #94a3b8; margin: 1.5rem 0 1rem 0; font-size: 0.9rem; text-transform: uppercase;">
+                <i class="fas fa-percentage"></i> Fee Settings
+            </h4>
+            
+            <div class="fee-grid">
+                <div class="form-group">
+                    <label>Investment Fee %</label>
+                    <input type="number" id="feeIn" value="0.1" step="0.01" min="0" max="5" oninput="calculate()">
+                </div>
+                <div class="form-group">
+                    <label>Exit Fee %</label>
+                    <input type="number" id="feeOut" value="0.1" step="0.01" min="0" max="5" oninput="calculate()">
+                </div>
+            </div>
+        </div>
+
+        <div class="result-card">
+            <div id="roiBadge" class="roi-badge roi-up">
+                <i class="fas fa-arrow-up"></i> +0% ROI
+            </div>
+            
+            <label style="color: #94a3b8;">NET PROFIT/LOSS</label>
+            <div class="profit-value" id="profitDisplay">$0.00</div>
+            
+            <div class="profit-breakdown">
+                <div class="stat-line">
+                    <span>Total Investment Cost</span>
+                    <b id="totalCost">$0.00</b>
+                </div>
+                <div class="stat-line">
+                    <span>Total Sale Revenue</span>
+                    <b id="totalRev">$0.00</b>
+                </div>
+                <div class="stat-line">
+                    <span>Coins Owned</span>
+                    <b id="coins">0.02</b>
+                </div>
+                <div class="stat-line">
+                    <span>Investment Fees</span>
+                    <b id="buyFeeDisplay">$0.00</b>
+                </div>
+                <div class="stat-line" style="border-bottom: none;">
+                    <span>Exit Fees</span>
+                    <b id="sellFeeDisplay">$0.00</b>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <article class="seo-content">
+        <h2><i class="fas fa-chart-bar"></i> Advanced Crypto Profit Analysis</h2>
+        <p>Calculate your <strong>Crypto ROI (Return on Investment)</strong> with precision. This 2026 tool factors in exchange fees (Maker/Taker) and network costs that can reduce profits by up to 5%.</p>
+        
+        <div style="margin-top: 1.5rem; padding: 1rem; background: rgba(245, 158, 11, 0.05); border-radius: 12px; border-left: 4px solid var(--primary);">
+            <h4 style="color: #fff; margin-bottom: 8px;">Formula Used:</h4>
+            <p style="margin: 0; font-family: 'JetBrains Mono'; color: var(--primary);">
+                Net Profit = (Sale Revenue - Exit Fees) - (Investment + Buy Fees)
+            </p>
+        </div>
+        
+        <p style="margin-top: 1.5rem;">Whether trading <strong>Bitcoin (BTC)</strong>, <strong>Ethereum (ETH)</strong>, or <strong>Solana (SOL)</strong>, this calculator shows your exact "real money" profit after all fees.</p>
+    </article>
+    
+    <div class="ad-container">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3335211279499934"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+</div>
+
+<script>
+    let selectedCoin = 'BTC';
+    
+    function selectCoin(coin) {
+        selectedCoin = coin;
+        document.querySelectorAll('.coin-btn').forEach(btn => btn.classList.remove('active'));
+        event.target.classList.add('active');
+        
+        // Update placeholder prices based on selected coin
+        const buyInput = document.getElementById('buyPrice');
+        const sellInput = document.getElementById('sellPrice');
+        
+        switch(coin) {
+            case 'BTC':
+                buyInput.value = 50000;
+                sellInput.value = 65000;
+                break;
+            case 'ETH':
+                buyInput.value = 3000;
+                sellInput.value = 3900;
+                break;
+            case 'SOL':
+                buyInput.value = 100;
+                sellInput.value = 130;
+                break;
+        }
+        
+        calculate();
+    }
+    
+    function calculate() {
+        const symbol = document.getElementById('cur').value;
+        const invested = parseFloat(document.getElementById('invested').value) || 0;
+        const buyPrice = parseFloat(document.getElementById('buyPrice').value) || 0;
+        const sellPrice = parseFloat(document.getElementById('sellPrice').value) || 0;
+        const feeIn = (parseFloat(document.getElementById('feeIn').value) || 0) / 100;
+        const feeOut = (parseFloat(document.getElementById('feeOut').value) || 0) / 100;
+
+        // Calculations
+        const coinsOwned = buyPrice > 0 ? invested / buyPrice : 0;
+        const buyFeeAmt = invested * feeIn;
+        const totalInvestmentCost = invested + buyFeeAmt;
+
+        const grossSaleRevenue = coinsOwned * sellPrice;
+        const exitFeeAmt = grossSaleRevenue * feeOut;
+        const netSaleRevenue = grossSaleRevenue - exitFeeAmt;
+
+        const netProfit = netSaleRevenue - totalInvestmentCost;
+        const roi = totalInvestmentCost > 0 ? (netProfit / totalInvestmentCost) * 100 : 0;
+
+        // Display
+        const fmt = (num) => symbol + " " + num.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+        const fmtSmall = (num) => symbol + " " + num.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+        
+        const display = document.getElementById('profitDisplay');
+        display.innerText = fmt(netProfit);
+        display.style.color = netProfit >= 0 ? 'var(--accent)' : 'var(--danger)';
+
+        const badge = document.getElementById('roiBadge');
+        badge.innerHTML = (roi >= 0 ? '<i class="fas fa-arrow-up"></i> +' : '<i class="fas fa-arrow-down"></i> ') + roi.toFixed(2) + "% ROI";
+        badge.className = "roi-badge " + (roi >= 0 ? "roi-up" : "roi-down");
+
+        document.getElementById('totalCost').innerText = fmt(totalInvestmentCost);
+        document.getElementById('totalRev').innerText = fmt(netSaleRevenue);
+        document.getElementById('coins').innerText = coinsOwned.toFixed(6);
+        document.getElementById('buyFeeDisplay').innerText = fmtSmall(buyFeeAmt);
+        document.getElementById('sellFeeDisplay').innerText = fmtSmall(exitFeeAmt);
+    }
+    
+    window.onload = function() {
+        calculate();
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    };
+</script>
+</body>
+</html>

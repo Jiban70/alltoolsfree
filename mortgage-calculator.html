@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Global Mortgage Calculator 2026 | EMI Calculator for All Countries</title>
+    <meta name="description" content="Free mortgage calculator for all countries - USA, UK, Canada, Australia, India, Nepal, Europe, Asia. Calculate EMI, interest, and amortization for any currency.">
+    <meta name="keywords" content="mortgage calculator 2026, home loan EMI calculator, global mortgage tool, USA mortgage calculator, UK mortgage calculator, India home loan, Nepal housing loan, Canada mortgage, Australia home loan, Europe mortgage calculator">
+    <meta name="author" content="AllToolsFree">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://jiban70.github.io/mortgage-calculator.html" />
+
+    <meta property="og:title" content="Global Mortgage Calculator 2026 | Works in All Countries">
+    <meta property="og:description" content="The only mortgage calculator you need for any country. Supports all currencies and local payment methods.">
+    <meta property="og:image" content="https://jiban70.github.io/assets/mortgage-global.jpg">
+    <meta property="og:url" content="https://jiban70.github.io/mortgage-calculator.html">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Global Mortgage Calculator 2026">
+    <meta name="twitter:description" content="Works in USA, UK, Canada, Australia, India, Nepal, and all countries.">
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3335211279499934" crossorigin="anonymous"></script>
+
+    <script type="application/ld+json">
+    [
+      {
+        "@context": "https://schema.org",
+        "@type": "FinancialCalculator",
+        "name": "Global Mortgage Calculator for All Countries",
+        "description": "Calculates mortgage payments for any country with local currency support.",
+        "url": "https://jiban70.github.io/mortgage-calculator.html",
+        "category": "FinanceApplication",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://jiban70.github.io/index.html"
+        },{
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Global Mortgage Calculator"
+        }]
+      }
+    ]
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root { 
+            --primary: #3b82f6; 
+            --accent: #10b981; 
+            --bg: #020617; 
+            --card: #0f172a; 
+            --border: #334155;
+            --shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+        body { background-color: var(--bg); color: #f8fafc; line-height: 1.6; }
+
+        nav { 
+            padding: 1rem 5%; 
+            background: rgba(2, 6, 23, 0.9); 
+            backdrop-filter: blur(10px); 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+            border-bottom: 1px solid var(--border); 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+        }
+        .logo { 
+            font-size: 1.5rem; 
+            font-weight: 800; 
+            color: #fff; 
+            text-decoration: none; 
+        }
+        .logo span { color: var(--primary); }
+
+        .container { 
+            max-width: 1200px; 
+            margin: 2rem auto; 
+            padding: 0 1rem; 
+        }
+        .main-card { 
+            background: var(--card); 
+            border-radius: 20px; 
+            border: 1px solid var(--border); 
+            display: grid; 
+            grid-template-columns: 400px 1fr;
+            box-shadow: var(--shadow);
+        }
+        .inputs { 
+            padding: 2rem; 
+            border-right: 1px solid var(--border); 
+        }
+        .outputs { 
+            padding: 2rem; 
+            background: rgba(255,255,255,0.01); 
+        }
+
+        .input-box { margin-bottom: 1.5rem; }
+        label { 
+            display: block; 
+            font-size: 0.75rem; 
+            font-weight: 800; 
+            color: var(--primary); 
+            text-transform: uppercase; 
+            margin-bottom: 0.5rem; 
+            letter-spacing: 1px; 
+        }
+        input, select { 
+            width: 100%; 
+            background: #1e293b; 
+            border: 1px solid var(--border); 
+            padding: 0.8rem; 
+            border-radius: 12px; 
+            color: #fff; 
+            font-size: 1.1rem; 
+            font-weight: 600; 
+            outline: none;
+            transition: border 0.3s;
+        }
+        input:focus, select:focus { 
+            border-color: var(--primary); 
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2); 
+        }
+
+        .emi-val { 
+            font-size: 3rem; 
+            font-weight: 800; 
+            color: var(--accent); 
+            margin: 1rem 0; 
+        }
+        .viz-grid { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 1.5rem; 
+            margin-top: 1.5rem;
+        }
+        .stat-card { 
+            background: rgba(255,255,255,0.05); 
+            padding: 1.2rem; 
+            border-radius: 16px; 
+            margin-bottom: 10px; 
+            border-top: 4px solid var(--primary);
+        }
+        .stat-card h3 { 
+            font-size: 1.4rem; 
+            color: #fff; 
+            margin: 5px 0;
+        }
+        .stat-card p {
+            color: #94a3b8;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .table-wrap { 
+            margin-top: 2rem; 
+            background: var(--card); 
+            padding: 1.5rem; 
+            border-radius: 20px; 
+            border: 1px solid var(--border); 
+            overflow-x: auto; 
+        }
+        table { 
+            width: 100%; 
+            border-collapse: collapse; 
+        }
+        th { 
+            text-align: left; 
+            padding: 1rem; 
+            color: #94a3b8; 
+            font-size: 0.8rem; 
+            font-weight: 700;
+            border-bottom: 1px solid var(--border);
+        }
+        td { 
+            padding: 1rem; 
+            border-bottom: 1px solid rgba(255,255,255,0.05); 
+        }
+
+        .seo-rich-text { 
+            margin-top: 3rem; 
+            padding: 2rem; 
+            background: rgba(255,255,255,0.02); 
+            border-radius: 20px; 
+            line-height: 1.8; 
+            color: #94a3b8; 
+            border: 1px solid var(--border);
+        }
+        .seo-rich-text h2 { 
+            color: #fff; 
+            margin-bottom: 1rem; 
+            position: relative;
+            padding-bottom: 10px;
+        }
+        .seo-rich-text h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+        
+        .country-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .country-card {
+            background: rgba(59, 130, 246, 0.05);
+            padding: 1rem;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+        .country-card i {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+        }
+        .country-card span {
+            display: block;
+            font-weight: 700;
+            color: #fff;
+            font-size: 0.9rem;
+        }
+        
+        .ad-container {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        @media (max-width: 900px) { 
+            .main-card { 
+                grid-template-columns: 1fr; 
+            } 
+            .viz-grid { 
+                grid-template-columns: 1fr; 
+            }
+            .inputs {
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="index.html" class="logo">AllTools<span>Free</span></a>
+    <div style="font-size: 0.8rem; font-weight: 800; color: var(--accent); background: rgba(16, 185, 129, 0.1); padding: 8px 16px; border-radius: 50px; border: 1px solid var(--accent);">
+        <i class="fas fa-globe"></i> GLOBAL TOOL 2026
+    </div>
+</nav>
+
+<div class="container">
+    <div class="ad-container">
+        <ins class="adsbygoogle" 
+             style="display:block" 
+             data-ad-client="ca-pub-3335211279499934"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <div class="main-card">
+        <section class="inputs">
+            <div class="input-box">
+                <label><i class="fas fa-globe-americas"></i> Select Country/Currency</label>
+                <select id="cur" onchange="update()">
+                    <option value="$">United States (USD $)</option>
+                    <option value="£">United Kingdom (GBP £)</option>
+                    <option value="€">European Union (EUR €)</option>
+                    <option value="C$">Canada (CAD C$)</option>
+                    <option value="A$">Australia (AUD A$)</option>
+                    <option value="₹">India (INR ₹)</option>
+                    <option value="Rs.">Nepal/Sri Lanka/Pakistan (Rs.)</option>
+                    <option value="¥">Japan (JPY ¥)</option>
+                    <option value="¥">China (CNY ¥)</option>
+                    <option value="₩">South Korea (KRW ₩)</option>
+                    <option value="$">Singapore (SGD $)</option>
+                    <option value="₱">Philippines (PHP ₱)</option>
+                    <option value="RM">Malaysia (MYR RM)</option>
+                </select>
+            </div>
+            <div class="input-box">
+                <label><i class="fas fa-home"></i> Property Price</label>
+                <input type="number" id="price" value="500000" min="1000" step="1000" oninput="update()">
+            </div>
+            <div class="input-box">
+                <label><i class="fas fa-money-bill-wave"></i> Down Payment</label>
+                <input type="number" id="down" value="100000" min="0" step="1000" oninput="update()">
+            </div>
+            <div class="input-box">
+                <label><i class="fas fa-percentage"></i> Interest Rate (%)</label>
+                <input type="number" id="rate" value="5.5" step="0.1" min="0.1" max="30" oninput="update()">
+            </div>
+            <div class="input-box">
+                <label><i class="fas fa-calendar-alt"></i> Loan Term (Years)</label>
+                <input type="number" id="term" value="25" min="1" max="40" step="1" oninput="update()">
+            </div>
+        </section>
+
+        <section class="outputs">
+            <label style="color: #94a3b8; font-size: 0.9rem;">MONTHLY PAYMENT (EMI)</label>
+            <div class="emi-val" id="emiDisplay">0.00</div>
+            <p style="color: #94a3b8; font-size: 0.9rem;">Principal + Interest per month</p>
+            
+            <div class="viz-grid">
+                <div style="height: 250px;">
+                    <canvas id="myChart"></canvas>
+                </div>
+                <div>
+                    <div class="stat-card">
+                        <p>TOTAL LOAN AMOUNT</p>
+                        <h3 id="totLoan">0.00</h3>
+                    </div>
+                    <div class="stat-card">
+                        <p>TOTAL INTEREST PAYABLE</p>
+                        <h3 id="totInt" style="color: #f87171;">0.00</h3>
+                    </div>
+                    <div class="stat-card">
+                        <p>TOTAL PAYMENT OVER LOAN</p>
+                        <h3 id="totPay">0.00</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="table-wrap">
+        <h2><i class="fas fa-table"></i> Amortization Schedule - First 12 Months</h2>
+        <table id="amortTable">
+            <thead>
+                <tr>
+                    <th>Month</th>
+                    <th>Principal</th>
+                    <th>Interest</th>
+                    <th>Remaining Balance</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <article class="seo-rich-text">
+        <h2>Global Mortgage Calculator for All Countries</h2>
+        <p>Our <strong>Universal Mortgage Calculator</strong> works in every country worldwide. Whether you're buying property in the United States, United Kingdom, Canada, Australia, India, Nepal, or any other country, this tool calculates accurate monthly payments using the international standard formula:</p>
+        
+        <p><strong>EMI = [P × r × (1+r)^n] / [(1+r)^n - 1]</strong><br>
+        Where P = Principal loan amount, r = Monthly interest rate, n = Loan term in months</p>
+
+        <h3>Supported Countries & Regions:</h3>
+        <div class="country-grid">
+            <div class="country-card">
+                <i class="fas fa-flag-usa"></i>
+                <span>United States</span>
+            </div>
+            <div class="country-card">
+                <i class="fas fa-flag-uk"></i>
+                <span>United Kingdom</span>
+            </div>
+            <div class="country-card">
+                <i class="fas fa-flag-eu"></i>
+                <span>European Union</span>
+            </div>
+            <div class="country-card">
+                <i class="fas fa-flag-canada"></i>
+                <span>Canada</span>
+            </div>
+            <div class="country-card">
+                <i class="fas fa-flag-australia"></i>
+                <span>Australia</span>
+            </div>
+            <div class="country-card">
+                <i class="fas fa-flag-india"></i>
+                <span>India</span>
+            </div>
+            <div class="country-card">
+                <i class="fas fa-flag-nepal"></i>
+                <span>Nepal</span>
+            </div>
+            <div class="country-card">
+                <i class="fas fa-globe-asia"></i>
+                <span>All Asian Countries</span>
+            </div>
+        </div>
+
+        <p><strong>Why This Calculator Works Everywhere:</strong> Mortgage mathematics is universal. Whether you call it EMI (Equated Monthly Installment) in India and Nepal, "mortgage payment" in the USA and UK, or "home loan repayment" in Australia - the calculation remains the same. Only the currency symbol changes!</p>
+
+        <h3>Local Considerations by Region:</h3>
+        <ul style="margin-left: 20px; color: #94a3b8; margin-bottom: 1rem;">
+            <li><strong>USA/Canada:</strong> Typically 15-30 year fixed rates, property taxes separate</li>
+            <li><strong>UK/Europe:</strong> Often includes arrangement fees, variable rates common</li>
+            <li><strong>India/Nepal:</strong> EMI calculations include processing fees, shorter terms</li>
+            <li><strong>Australia:</strong> Offset accounts common, interest-only periods available</li>
+        </ul>
+    </article>
+    
+    <div class="ad-container">
+        <ins class="adsbygoogle" 
+             style="display:block" 
+             data-ad-client="ca-pub-3335211279499934"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+</div>
+
+<script>
+    let chart = null;
+    function update() {
+        const symbol = document.getElementById('cur').value;
+        const p_price = parseFloat(document.getElementById('price').value) || 0;
+        const p_down = parseFloat(document.getElementById('down').value) || 0;
+        const p_rate = parseFloat(document.getElementById('rate').value) || 0;
+        const p_term = parseFloat(document.getElementById('term').value) || 0;
+
+        const principal = p_price - p_down;
+        const monthlyRate = (p_rate / 100) / 12;
+        const totalMonths = p_term * 12;
+
+        const emi = (principal * monthlyRate * Math.pow(1 + monthlyRate, totalMonths)) / (Math.pow(1 + monthlyRate, totalMonths) - 1);
+
+        if (isFinite(emi) && emi > 0) {
+            const totalPayment = emi * totalMonths;
+            const totalInterest = totalPayment - principal;
+            const fmt = (n) => symbol + " " + n.toLocaleString(undefined, {maximumFractionDigits: 0});
+
+            document.getElementById('emiDisplay').innerText = fmt(emi);
+            document.getElementById('totLoan').innerText = fmt(principal);
+            document.getElementById('totInt').innerText = fmt(totalInterest);
+            document.getElementById('totPay').innerText = fmt(totalPayment);
+
+            updateChart(principal, totalInterest);
+            updateTable(principal, monthlyRate, emi, symbol);
+        }
+    }
+
+    function updateChart(p, i) {
+        const ctx = document.getElementById('myChart').getContext('2d');
+        if (chart) chart.destroy();
+        chart = new Chart(ctx, {
+            type: 'doughnut',
+            data: { 
+                labels: ['Principal', 'Interest'], 
+                datasets: [{ 
+                    data: [p, i], 
+                    backgroundColor: ['#3b82f6', '#f87171'], 
+                    borderWidth: 0,
+                    hoverOffset: 15
+                }] 
+            },
+            options: { 
+                cutout: '75%', 
+                plugins: { 
+                    legend: { 
+                        position: 'bottom', 
+                        labels: { 
+                            color: '#94a3b8', 
+                            font: { size: 12 },
+                            padding: 20
+                        } 
+                    } 
+                },
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
+    }
+
+    function updateTable(p, r, emi, sym) {
+        const tbody = document.querySelector('#amortTable tbody');
+        tbody.innerHTML = '';
+        let balance = p;
+        for (let i = 1; i <= 12; i++) {
+            const intr = balance * r;
+            const prin = emi - intr;
+            balance -= prin;
+            tbody.innerHTML += `<tr>
+                <td>${i}</td>
+                <td>${sym}${prin.toFixed(0)}</td>
+                <td>${sym}${intr.toFixed(0)}</td>
+                <td>${sym}${Math.max(0, balance).toLocaleString()}</td>
+            </tr>`;
+        }
+    }
+    
+    window.onload = function() {
+        update();
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    };
+</script>
+</body>
+</html>

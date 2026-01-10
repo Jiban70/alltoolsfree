@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>GPA Calculator 2026 | Semester & Cumulative GPA Tool | AllToolsFree</title>
+    <meta name="description" content="Free 2026 GPA Calculator. Supports 4.0 scale, percentage to GPA, and weighted/unweighted grades. Calculate your semester GPA instantly. Global grading support for Nepal, India, USA.">
+    <meta name="keywords" content="GPA calculator 2026, semester GPA tool, high school GPA calculator, college GPA estimator, weighted GPA calculator, AllToolsFree, Nepal grading system, CGPA to GPA">
+    <meta name="author" content="AllToolsFree">
+    <link rel="canonical" href="https://jiban70.github.io/gpa-calculator.html" />
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3335211279499934" crossorigin="anonymous"></script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Global GPA Calculator",
+      "url": "https://jiban70.github.io/gpa-calculator.html",
+      "description": "Interactive tool for students to calculate their Semester and Cumulative GPA.",
+      "applicationCategory": "EducationApplication",
+      "operatingSystem": "All"
+    }
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root { 
+            --primary: #0ea5e9; 
+            --accent: #f59e0b; 
+            --bg: #020617; 
+            --card: #0f172a; 
+            --border: #334155;
+            --success: #10b981;
+            --shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+        body { background-color: var(--bg); color: #f8fafc; line-height: 1.6; }
+
+        nav { 
+            padding: 1rem 5%; 
+            background: rgba(2, 6, 23, 0.95); 
+            backdrop-filter: blur(10px); 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+            border-bottom: 1px solid var(--border); 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+        }
+        .logo { 
+            font-size: 1.5rem; 
+            font-weight: 800; 
+            color: #fff; 
+            text-decoration: none; 
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .logo span { color: var(--primary); }
+
+        .container { 
+            max-width: 1200px; 
+            margin: 2rem auto; 
+            padding: 0 1rem; 
+        }
+        
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .calculator-card { 
+            background: var(--card); 
+            border-radius: 20px; 
+            border: 1px solid var(--border); 
+            padding: 2rem;
+            box-shadow: var(--shadow);
+        }
+        
+        .sidebar-card {
+            background: var(--card);
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+        }
+        
+        table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            margin-bottom: 1.5rem; 
+        }
+        th { 
+            text-align: left; 
+            color: #94a3b8; 
+            font-size: 0.75rem; 
+            padding: 12px 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 700;
+            border-bottom: 1px solid var(--border);
+        }
+        td { 
+            padding: 12px 10px; 
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        input, select { 
+            width: 100%; 
+            background: #1e293b; 
+            border: 1px solid var(--border); 
+            padding: 12px; 
+            border-radius: 10px; 
+            color: #fff; 
+            outline: none;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+        input:focus, select:focus { 
+            border-color: var(--primary); 
+            box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.2);
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .btn { 
+            cursor: pointer; 
+            border: none; 
+            padding: 12px 20px; 
+            border-radius: 10px; 
+            font-weight: 700; 
+            transition: all 0.3s; 
+            display: inline-flex; 
+            align-items: center; 
+            gap: 8px; 
+            font-size: 0.9rem;
+        }
+        .btn-add { 
+            background: rgba(14, 165, 233, 0.1); 
+            color: var(--primary); 
+            border: 1px solid rgba(14, 165, 233, 0.3);
+        }
+        .btn-add:hover { 
+            background: var(--primary); 
+            color: #fff; 
+            transform: translateY(-2px);
+        }
+        .btn-reset { 
+            background: rgba(239, 68, 68, 0.1); 
+            color: #ef4444; 
+            border: 1px solid rgba(239, 68, 68, 0.3);
+        }
+        .btn-reset:hover {
+            background: #ef4444;
+            color: #fff;
+            transform: translateY(-2px);
+        }
+        .btn-del { 
+            color: #ef4444; 
+            background: none; 
+            font-size: 1.1rem; 
+            padding: 5px 10px;
+            border-radius: 6px;
+        }
+        .btn-del:hover {
+            background: rgba(239, 68, 68, 0.1);
+        }
+
+        .result-box { 
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.1), rgba(37, 99, 235, 0.1)); 
+            border: 2px solid var(--primary); 
+            border-radius: 18px; 
+            padding: 2rem; 
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        .gpa-display { 
+            font-size: 3.5rem; 
+            font-weight: 800; 
+            color: var(--primary);
+            margin: 10px 0;
+            text-shadow: 0 5px 15px rgba(14, 165, 233, 0.3);
+        }
+        
+        .gpa-status {
+            display: inline-block;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-top: 10px;
+        }
+        .gpa-excellent {
+            background: rgba(34, 197, 94, 0.1);
+            color: #22c55e;
+            border: 1px solid rgba(34, 197, 94, 0.3);
+        }
+        .gpa-good {
+            background: rgba(14, 165, 233, 0.1);
+            color: var(--primary);
+            border: 1px solid rgba(14, 165, 233, 0.3);
+        }
+        .gpa-fair {
+            background: rgba(245, 158, 11, 0.1);
+            color: var(--accent);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+        }
+        
+        .scale-guide {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: rgba(255,255,255,0.03);
+            border-radius: 12px;
+            border-left: 4px solid var(--accent);
+        }
+        .scale-guide h4 {
+            color: #fff;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+        .scale-guide p {
+            color: #94a3b8;
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+        
+        .faq-section {
+            margin-top: 3rem;
+            background: rgba(255,255,255,0.02);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid var(--border);
+        }
+        .faq-section h2 {
+            color: #fff;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        .faq-section h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+        
+        .faq-item {
+            background: var(--card);
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--primary);
+            transition: transform 0.3s;
+        }
+        .faq-item:hover {
+            transform: translateX(5px);
+        }
+        .faq-item h4 {
+            color: #fff;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+        .faq-item p {
+            color: #94a3b8;
+            font-size: 0.95rem;
+        }
+        
+        .ad-container { 
+            text-align: center; 
+            margin: 2rem 0; 
+        }
+        
+        .info-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px;
+            background: rgba(14, 165, 233, 0.05);
+            border-radius: 10px;
+            margin-top: 1rem;
+            border: 1px solid rgba(14, 165, 233, 0.2);
+        }
+        .info-box i {
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+        .info-box p {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+        
+        @media (max-width: 900px) { 
+            .main-grid { 
+                grid-template-columns: 1fr; 
+            }
+        }
+        
+        @media (max-width: 600px) { 
+            th, td { padding: 10px 8px; }
+            .action-buttons { flex-direction: column; }
+            .btn { width: 100%; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="index.html" class="logo">
+        <i class="fas fa-calculator"></i>
+        AllTools<span>Free</span>
+    </a>
+    <div style="font-size: 0.8rem; font-weight: 800; color: var(--accent); background: rgba(245, 158, 11, 0.1); padding: 8px 16px; border-radius: 50px; border: 1px solid var(--accent);">
+        <i class="fas fa-graduation-cap"></i> ACADEMIC ENGINE 2026
+    </div>
+</nav>
+
+<div class="container">
+    <div class="ad-container">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3335211279499934"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <div class="main-grid">
+        <div class="calculator-card">
+            <h2 style="color: #fff; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 10px;">
+                <i class="fas fa-calculator" style="color: var(--primary);"></i>
+                GPA Calculator
+            </h2>
+            
+            <table id="gpaTable">
+                <thead>
+                    <tr>
+                        <th>Course Name</th>
+                        <th>Grade</th>
+                        <th>Credits</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="courseBody">
+                    <tr>
+                        <td><input type="text" placeholder="e.g. Mathematics" oninput="calculateGPA()"></td>
+                        <td>
+                            <select class="grade" onchange="calculateGPA()">
+                                <option value="4.0">A / A+ (4.0)</option>
+                                <option value="3.7">A- (3.7)</option>
+                                <option value="3.3">B+ (3.3)</option>
+                                <option value="3.0">B (3.0)</option>
+                                <option value="2.7">B- (2.7)</option>
+                                <option value="2.3">C+ (2.3)</option>
+                                <option value="2.0">C (2.0)</option>
+                                <option value="0.0">F (0.0)</option>
+                            </select>
+                        </td>
+                        <td><input type="number" class="credits" value="3" min="1" max="10" oninput="calculateGPA()"></td>
+                        <td><button class="btn-del" onclick="removeRow(this)"><i class="fas fa-trash"></i></button></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="action-buttons">
+                <button class="btn btn-add" onclick="addRow()">
+                    <i class="fas fa-plus-circle"></i> Add Course
+                </button>
+                <button class="btn btn-reset" onclick="resetCalculator()">
+                    <i class="fas fa-redo"></i> Reset All
+                </button>
+            </div>
+            
+            <div class="info-box">
+                <i class="fas fa-info-circle"></i>
+                <p>Add all your courses. The GPA updates automatically as you edit.</p>
+            </div>
+        </div>
+
+        <div class="sidebar-card">
+            <div class="result-box">
+                <p style="color: #94a3b8; font-weight: 700; text-transform: uppercase; font-size: 0.8rem;">Your Semester GPA</p>
+                <div class="gpa-display" id="gpaResult">4.00</div>
+                <div id="gpaStatus" class="gpa-status gpa-excellent">Excellent</div>
+                
+                <div style="margin-top: 1.5rem;">
+                    <p style="color: #94a3b8; font-size: 0.9rem; margin-bottom: 5px;">Total Credits: <strong id="totalCredits">3</strong></p>
+                    <p style="color: #94a3b8; font-size: 0.9rem;">Total Grade Points: <strong id="totalPoints">12.0</strong></p>
+                </div>
+            </div>
+            
+            <div class="scale-guide">
+                <h4><i class="fas fa-list-alt"></i> 4.0 Scale Guide</h4>
+                <p>A = 4.0, A- = 3.7, B+ = 3.3, B = 3.0, B- = 2.7, C+ = 2.3, C = 2.0, F = 0.0</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="faq-section">
+        <h2><i class="fas fa-question-circle"></i> GPA Frequently Asked Questions</h2>
+        
+        <div class="faq-item">
+            <h4>How is GPA calculated?</h4>
+            <p>GPA = (Sum of Grade Points × Credits) ÷ Total Credits. Each grade has a point value (A=4.0, B=3.0, etc.) multiplied by course credits.</p>
+        </div>
+        
+        <div class="faq-item">
+            <h4>What's the difference between GPA and CGPA?</h4>
+            <p>GPA is for a single semester, while CGPA (Cumulative GPA) is the average of all semesters completed.</p>
+        </div>
+        
+        <div class="faq-item">
+            <h4>Does this work for Nepali/Indian grading systems?</h4>
+            <p>Yes! Convert percentage to 4.0 scale: 90-100% = A (4.0), 80-89% = B (3.0), 70-79% = C (2.0), 60-69% = D (1.0), Below 60% = F (0.0).</p>
+        </div>
+        
+        <div class="faq-item">
+            <h4>What is a good GPA?</h4>
+            <p>3.5+ = Excellent, 3.0-3.49 = Good, 2.5-2.99 = Satisfactory, Below 2.5 = Needs improvement.</p>
+        </div>
+    </div>
+    
+    <div class="ad-container">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3335211279499934"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+</div>
+
+<script>
+    function addRow() {
+        const body = document.getElementById('courseBody');
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td><input type="text" placeholder="Course name" oninput="calculateGPA()"></td>
+            <td>
+                <select class="grade" onchange="calculateGPA()">
+                    <option value="4.0">A / A+ (4.0)</option>
+                    <option value="3.7">A- (3.7)</option>
+                    <option value="3.3">B+ (3.3)</option>
+                    <option value="3.0">B (3.0)</option>
+                    <option value="2.7">B- (2.7)</option>
+                    <option value="2.3">C+ (2.3)</option>
+                    <option value="2.0">C (2.0)</option>
+                    <option value="0.0">F (0.0)</option>
+                </select>
+            </td>
+            <td><input type="number" class="credits" value="3" min="1" max="10" oninput="calculateGPA()"></td>
+            <td><button class="btn-del" onclick="removeRow(this)"><i class="fas fa-trash"></i></button></td>
+        `;
+        body.appendChild(row);
+        calculateGPA();
+    }
+
+    function removeRow(btn) {
+        if(document.querySelectorAll('.grade').length > 1) {
+            btn.parentElement.parentElement.remove();
+            calculateGPA();
+        }
+    }
+
+    function resetCalculator() {
+        const body = document.getElementById('courseBody');
+        body.innerHTML = `
+            <tr>
+                <td><input type="text" placeholder="e.g. Mathematics" oninput="calculateGPA()"></td>
+                <td>
+                    <select class="grade" onchange="calculateGPA()">
+                        <option value="4.0">A / A+ (4.0)</option>
+                        <option value="3.7">A- (3.7)</option>
+                        <option value="3.3">B+ (3.3)</option>
+                        <option value="3.0">B (3.0)</option>
+                        <option value="2.7">B- (2.7)</option>
+                        <option value="2.3">C+ (2.3)</option>
+                        <option value="2.0">C (2.0)</option>
+                        <option value="0.0">F (0.0)</option>
+                    </select>
+                </td>
+                <td><input type="number" class="credits" value="3" min="1" max="10" oninput="calculateGPA()"></td>
+                <td><button class="btn-del" onclick="removeRow(this)"><i class="fas fa-trash"></i></button></td>
+            </tr>
+        `;
+        calculateGPA();
+    }
+
+    function calculateGPA() {
+        const grades = document.querySelectorAll('.grade');
+        const credits = document.querySelectorAll('.credits');
+        
+        let totalPoints = 0;
+        let totalCredits = 0;
+
+        for (let i = 0; i < grades.length; i++) {
+            const g = parseFloat(grades[i].value);
+            const c = parseFloat(credits[i].value) || 0;
+            totalPoints += (g * c);
+            totalCredits += c;
+        }
+
+        const gpa = totalCredits > 0 ? (totalPoints / totalCredits) : 0;
+        document.getElementById('gpaResult').innerText = gpa.toFixed(2);
+        document.getElementById('totalCredits').innerText = totalCredits;
+        document.getElementById('totalPoints').innerText = totalPoints.toFixed(1);
+        
+        // Update GPA status
+        const statusElement = document.getElementById('gpaStatus');
+        statusElement.className = 'gpa-status ';
+        
+        if (gpa >= 3.5) {
+            statusElement.className += 'gpa-excellent';
+            statusElement.innerHTML = '<i class="fas fa-trophy"></i> Excellent';
+        } else if (gpa >= 3.0) {
+            statusElement.className += 'gpa-good';
+            statusElement.innerHTML = '<i class="fas fa-thumbs-up"></i> Good';
+        } else if (gpa >= 2.0) {
+            statusElement.className += 'gpa-fair';
+            statusElement.innerHTML = '<i class="fas fa-check-circle"></i> Satisfactory';
+        } else {
+            statusElement.className = 'gpa-status';
+            statusElement.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Needs Improvement';
+        }
+    }
+
+    window.onload = function() {
+        calculateGPA();
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    };
+</script>
+</body>
+</html>

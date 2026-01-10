@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Calorie & Macro Calculator 2026 | Precision Nutrition Tool</title>
+    <meta name="description" content="Calculate TDEE, BMR, and macronutrient needs for weight loss or muscle gain using the Mifflin-St Jeor Equation.">
+    <meta name="keywords" content="calorie calculator 2026, macro calculator, TDEE calculator, BMR tool, weight loss calculator, AllToolsFree">
+    <meta name="author" content="AllToolsFree">
+    <link rel="canonical" href="https://jiban70.github.io/calorie-and-macro-calculator.html" />
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3335211279499934" crossorigin="anonymous"></script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Calorie & Macro Calculator",
+      "url": "https://jiban70.github.io/calorie-and-macro-calculator.html",
+      "description": "Calculate daily caloric needs and macronutrient ratios.",
+      "applicationCategory": "HealthApplication"
+    }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root { 
+            --primary: #ef4444; 
+            --accent: #f97316;
+            --bg: #0f172a; 
+            --card: #1e293b; 
+            --border: #334155;
+            --shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+        body { background-color: var(--bg); color: #fff; line-height: 1.6; }
+
+        nav { 
+            padding: 1rem; 
+            background: rgba(15, 23, 42, 0.95); 
+            border-bottom: 1px solid var(--border); 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+        }
+        .logo { 
+            font-size: 1.3rem; 
+            font-weight: 800; 
+            color: #fff; 
+            text-decoration: none; 
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .logo span { color: var(--primary); }
+
+        .container { 
+            max-width: 1100px; 
+            margin: 0 auto; 
+            padding: 1.5rem; 
+        }
+        
+        .main-ui { 
+            display: grid; 
+            grid-template-columns: 350px 1fr; 
+            gap: 1.5rem; 
+            margin-bottom: 1.5rem;
+        }
+        @media (max-width: 900px) { 
+            .main-ui { grid-template-columns: 1fr; } 
+        }
+        
+        .input-panel { 
+            background: var(--card); 
+            padding: 1.5rem; 
+            border-radius: 15px; 
+            border: 1px solid var(--border); 
+            box-shadow: var(--shadow);
+        }
+        .result-panel { 
+            background: rgba(255,255,255,0.02); 
+            padding: 1.5rem; 
+            border-radius: 15px; 
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+        }
+
+        .form-group { margin-bottom: 1.2rem; }
+        label { 
+            display: block; 
+            font-size: 0.75rem; 
+            font-weight: 700; 
+            color: #94a3b8; 
+            margin-bottom: 6px; 
+            text-transform: uppercase; 
+        }
+        input, select { 
+            width: 100%; 
+            background: #1e293b; 
+            border: 1px solid var(--border); 
+            padding: 12px; 
+            border-radius: 10px; 
+            color: #fff; 
+            font-size: 1rem; 
+            outline: none; 
+            transition: all 0.3s;
+        }
+        input:focus, select:focus { 
+            border-color: var(--primary); 
+            box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2);
+        }
+
+        .highlight-box { 
+            text-align: center; 
+            margin-bottom: 1.5rem; 
+            padding: 1.5rem; 
+            background: rgba(239, 68, 68, 0.1); 
+            border-radius: 15px; 
+            border: 2px solid var(--primary); 
+        }
+        .highlight-box h2 { 
+            font-size: 2.5rem; 
+            color: var(--primary); 
+            font-weight: 800; 
+            margin: 8px 0;
+        }
+
+        .macro-grid { 
+            display: grid; 
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 1rem; 
+            margin: 1.5rem 0; 
+        }
+        @media (max-width: 600px) { 
+            .macro-grid { grid-template-columns: 1fr; } 
+        }
+        
+        .macro-card { 
+            background: rgba(30, 41, 59, 0.8); 
+            padding: 1.2rem; 
+            border-radius: 12px; 
+            text-align: center;
+            border-top: 3px solid;
+        }
+        .macro-card:nth-child(1) { border-color: #ef4444; }
+        .macro-card:nth-child(2) { border-color: #f97316; }
+        .macro-card:nth-child(3) { border-color: #fbbf24; }
+        .macro-card span { 
+            font-size: 0.75rem; 
+            color: #94a3b8; 
+            font-weight: 700; 
+            display: block;
+            margin-bottom: 6px;
+        }
+        .macro-card h4 { 
+            font-size: 1.3rem; 
+            color: #fff; 
+            font-weight: 800;
+        }
+
+        .goal-buttons {
+            display: flex;
+            gap: 0.8rem;
+            margin: 1rem 0;
+        }
+        .goal-btn {
+            flex: 1;
+            padding: 10px;
+            background: #1e293b;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            color: #fff;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        .goal-btn.active {
+            background: rgba(239, 68, 68, 0.1);
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+        
+        .chart-container {
+            height: 220px;
+            margin-top: 1rem;
+        }
+        
+        .ad-container {
+            text-align: center;
+            margin: 1.5rem 0;
+        }
+        
+        .faq-grid { 
+            display: grid; 
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 1rem; 
+            margin-top: 1.5rem; 
+        }
+        @media (max-width: 768px) { 
+            .faq-grid { grid-template-columns: 1fr; } 
+        }
+        
+        .faq-box { 
+            background: var(--card); 
+            padding: 1rem; 
+            border-radius: 12px; 
+            border-left: 3px solid var(--primary); 
+        }
+        .faq-box h4 { 
+            color: #fff; 
+            margin-bottom: 8px; 
+            font-size: 1rem;
+        }
+        .faq-box p { 
+            font-size: 0.85rem; 
+            color: #94a3b8; 
+            margin: 0; 
+        }
+        
+        .section-title {
+            color: #fff;
+            margin: 1.5rem 0 1rem 0;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="index.html" class="logo">
+        <i class="fas fa-calculator"></i>
+        AllTools<span>Free</span>
+    </a>
+    <div style="font-size: 0.75rem; font-weight: 800; color: var(--primary); background: rgba(239, 68, 68, 0.1); padding: 6px 12px; border-radius: 20px; border: 1px solid rgba(239, 68, 68, 0.3);">
+        <i class="fas fa-heartbeat"></i> FITNESS 2026
+    </div>
+</nav>
+
+<div class="container">
+    <div class="ad-container">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3335211279499934"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <div class="main-ui">
+        <aside class="input-panel">
+            <div class="section-title">
+                <i class="fas fa-user"></i> Personal Info
+            </div>
+            
+            <div class="form-group">
+                <label>Gender</label>
+                <select id="gender" onchange="calculate()">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label>Weight (kg)</label>
+                <input type="number" id="weight" value="70" min="30" max="300" oninput="calculate()">
+            </div>
+            
+            <div class="form-group">
+                <label>Height (cm)</label>
+                <input type="number" id="height" value="175" min="100" max="250" oninput="calculate()">
+            </div>
+            
+            <div class="form-group">
+                <label>Age</label>
+                <input type="number" id="age" value="25" min="15" max="100" oninput="calculate()">
+            </div>
+            
+            <div class="form-group">
+                <label>Activity Level</label>
+                <select id="activity" onchange="calculate()">
+                    <option value="1.2">Sedentary</option>
+                    <option value="1.375">Lightly Active</option>
+                    <option value="1.55">Moderately Active</option>
+                    <option value="1.725">Very Active</option>
+                    <option value="1.9">Extra Active</option>
+                </select>
+            </div>
+            
+            <div class="section-title">
+                <i class="fas fa-bullseye"></i> Fitness Goal
+            </div>
+            
+            <div class="goal-buttons">
+                <button class="goal-btn active" onclick="setGoal('maintain')">Maintain</button>
+                <button class="goal-btn" onclick="setGoal('lose')">Lose Weight</button>
+                <button class="goal-btn" onclick="setGoal('gain')">Gain Muscle</button>
+            </div>
+        </aside>
+
+        <main class="result-panel">
+            <div class="highlight-box">
+                <p style="text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; color: #94a3b8; font-size: 0.85rem;">Daily TDEE Calories</p>
+                <h2 id="calories">2100</h2>
+                <p id="goalText" style="color: #94a3b8; font-size: 0.85rem;">To maintain current weight</p>
+            </div>
+            
+            <div class="macro-grid">
+                <div class="macro-card">
+                    <span>PROTEIN (30%)</span>
+                    <h4 id="prot">157g</h4>
+                </div>
+                <div class="macro-card">
+                    <span>CARBS (40%)</span>
+                    <h4 id="carb">210g</h4>
+                </div>
+                <div class="macro-card">
+                    <span>FATS (30%)</span>
+                    <h4 id="fat">70g</h4>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <canvas id="macroChart"></canvas>
+            </div>
+        </main>
+    </div>
+    
+    <div class="section-title" style="margin-top: 2rem;">
+        <i class="fas fa-question-circle"></i> Frequently Asked Questions
+    </div>
+    
+    <div class="faq-grid">
+        <div class="faq-box">
+            <h4>What is TDEE?</h4>
+            <p>Total Daily Energy Expenditure. It's the total calories you burn in a day based on your activity level.</p>
+        </div>
+        <div class="faq-box">
+            <h4>How often should I recalculate?</h4>
+            <p>Recalculate every time you lose or gain 5kg of body weight, as your metabolic needs change.</p>
+        </div>
+        <div class="faq-box">
+            <h4>Is the calorie count exact?</h4>
+            <p>It's a professional estimate. Individual genetics can vary by 10-15%, so use as a starting baseline.</p>
+        </div>
+        <div class="faq-box">
+            <h4>Can I use this for weight loss?</h4>
+            <p>Yes! For weight loss, subtract 500 calories from the TDEE shown above for a healthy calorie deficit.</p>
+        </div>
+    </div>
+    
+    <div class="ad-container">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3335211279499934"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+</div>
+
+<script>
+    let chart = null;
+    let currentGoal = 'maintain';
+    
+    function setGoal(goal) {
+        currentGoal = goal;
+        document.querySelectorAll('.goal-btn').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        event.target.classList.add('active');
+        calculate();
+    }
+    
+    function calculate() {
+        const gender = document.getElementById('gender').value;
+        const w = parseFloat(document.getElementById('weight').value) || 0;
+        const h = parseFloat(document.getElementById('height').value) || 0;
+        const a = parseFloat(document.getElementById('age').value) || 0;
+        const activity = parseFloat(document.getElementById('activity').value);
+
+        // Mifflin-St Jeor Equation
+        let bmr = (10 * w) + (6.25 * h) - (5 * a);
+        bmr = (gender === 'male') ? bmr + 5 : bmr - 161;
+        
+        let tdee = Math.round(bmr * activity);
+        
+        // Adjust for goal
+        let goalText = "To maintain current weight";
+        if (currentGoal === 'lose') {
+            tdee = Math.round(tdee * 0.85);
+            goalText = "For weight loss (-15% deficit)";
+        } else if (currentGoal === 'gain') {
+            tdee = Math.round(tdee * 1.15);
+            goalText = "For muscle gain (+15% surplus)";
+        }
+        
+        // Balanced Split: 30% Prot, 40% Carb, 30% Fat
+        const p = Math.round((tdee * 0.30) / 4);
+        const c = Math.round((tdee * 0.40) / 4);
+        const f = Math.round((tdee * 0.30) / 9);
+
+        document.getElementById('calories').innerText = tdee;
+        document.getElementById('goalText').innerText = goalText;
+        document.getElementById('prot').innerText = p + "g";
+        document.getElementById('carb').innerText = c + "g";
+        document.getElementById('fat').innerText = f + "g";
+
+        const ctx = document.getElementById('macroChart').getContext('2d');
+        if (chart) chart.destroy();
+        chart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Protein', 'Carbs', 'Fats'],
+                datasets: [{
+                    data: [p*4, c*4, f*9],
+                    backgroundColor: ['#ef4444', '#f97316', '#fbbf24'],
+                    borderWidth: 0
+                }]
+            },
+            options: { 
+                cutout: '65%', 
+                plugins: { 
+                    legend: { 
+                        position: 'bottom', 
+                        labels: { 
+                            color: '#94a3b8',
+                            font: { size: 11 }
+                        } 
+                    }
+                },
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
+    }
+    
+    window.onload = function() {
+        calculate();
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    };
+</script>
+</body>
+</html>

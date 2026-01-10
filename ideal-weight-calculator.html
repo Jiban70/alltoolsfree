@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Ideal Weight Calculator 2026 | Scientific Weight Estimator</title>
+    <meta name="description" content="Calculate your ideal body weight based on Devine, Robinson, and Miller formulas. Accurate health tool for men and women. Free and medically informed.">
+    <meta name="keywords" content="ideal weight calculator 2026, IBW calculator, healthy weight tool, body weight estimator, AllToolsFree, fitness tool">
+    <meta name="author" content="AllToolsFree">
+    <link rel="canonical" href="https://jiban70.github.io/ideal-weight-calculator.html" />
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3335211279499934" crossorigin="anonymous"></script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Scientific Ideal Weight Calculator",
+      "url": "https://jiban70.github.io/ideal-weight-calculator.html",
+      "description": "Calculate ideal body weight using multiple recognized medical formulas.",
+      "applicationCategory": "HealthApplication"
+    }
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root { 
+            --primary: #06b6d4; 
+            --accent: #22d3ee; 
+            --bg: #0f172a; 
+            --card: #1e293b; 
+            --border: #334155;
+            --shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+        body { background-color: var(--bg); color: #fff; line-height: 1.6; }
+
+        nav { 
+            padding: 1rem; 
+            background: rgba(15, 23, 42, 0.95); 
+            border-bottom: 1px solid var(--border); 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+        }
+        .logo { 
+            font-size: 1.3rem; 
+            font-weight: 800; 
+            color: #fff; 
+            text-decoration: none; 
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .logo span { color: var(--primary); }
+
+        .container { 
+            max-width: 900px; 
+            margin: 0 auto; 
+            padding: 1.5rem; 
+        }
+        
+        .calculator-card { 
+            background: var(--card); 
+            border-radius: 20px; 
+            border: 1px solid var(--border); 
+            display: grid; 
+            grid-template-columns: 1fr 1fr;
+            box-shadow: var(--shadow);
+            margin-bottom: 1.5rem;
+        }
+        
+        .input-section { 
+            padding: 1.5rem; 
+            border-right: 1px solid var(--border); 
+        }
+        .output-section { 
+            padding: 1.5rem; 
+            background: rgba(255,255,255,0.02); 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+        }
+
+        .form-group { margin-bottom: 1.2rem; }
+        label { 
+            display: block; 
+            font-size: 0.75rem; 
+            font-weight: 700; 
+            color: #94a3b8; 
+            margin-bottom: 6px; 
+            text-transform: uppercase; 
+        }
+        select { 
+            width: 100%; 
+            background: #1e293b; 
+            border: 1px solid var(--border); 
+            padding: 12px; 
+            border-radius: 10px; 
+            color: #fff; 
+            font-size: 1rem; 
+            outline: none;
+            transition: all 0.3s;
+        }
+        select:focus { 
+            border-color: var(--primary); 
+            box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.2);
+        }
+
+        .height-input {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+        .height-input input {
+            flex: 1;
+            background: #1e293b;
+            border: 1px solid var(--border);
+            padding: 12px;
+            border-radius: 10px;
+            color: #fff;
+            font-size: 1rem;
+        }
+        .height-slider {
+            width: 100%;
+            height: 8px;
+            border-radius: 4px;
+            background: linear-gradient(to right, #06b6d4, #22d3ee);
+            margin-top: 0.8rem;
+        }
+        .height-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--primary);
+            cursor: pointer;
+            border: 3px solid var(--bg);
+        }
+
+        .weight-result { 
+            font-size: 3rem; 
+            font-weight: 800; 
+            color: var(--primary); 
+            margin: 10px 0;
+            text-shadow: 0 5px 15px rgba(6, 182, 212, 0.3);
+        }
+        .unit-label { 
+            font-size: 0.9rem; 
+            color: #94a3b8; 
+            font-weight: 600; 
+            margin-bottom: 1.2rem;
+        }
+
+        .formula-grid { 
+            width: 100%; 
+            margin-top: 1.2rem; 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 10px; 
+        }
+        .formula-box { 
+            background: rgba(255,255,255,0.03); 
+            padding: 0.8rem; 
+            border-radius: 10px; 
+            text-align: center;
+            border-top: 2px solid var(--primary);
+        }
+        .formula-box span { 
+            font-size: 0.7rem; 
+            color: #94a3b8; 
+            display: block; 
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .formula-box b { 
+            font-size: 0.95rem; 
+            color: var(--accent); 
+            display: block;
+        }
+
+        .info-section { 
+            background: rgba(255,255,255,0.02); 
+            border-radius: 15px; 
+            padding: 1.2rem; 
+            border: 1px solid var(--border); 
+        }
+        .info-section h3 { 
+            color: #fff; 
+            margin-bottom: 0.8rem; 
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .info-section h3 i {
+            color: var(--primary);
+        }
+        
+        .faq-item { 
+            background: var(--card); 
+            padding: 1rem; 
+            border-radius: 12px; 
+            margin-top: 0.8rem; 
+            border-left: 3px solid var(--primary); 
+        }
+        .faq-item h4 { 
+            color: #fff; 
+            margin-bottom: 6px; 
+            font-size: 1rem;
+        }
+        .faq-item p {
+            color: #94a3b8;
+            font-size: 0.85rem;
+            margin: 0;
+        }
+
+        .ad-container {
+            text-align: center;
+            margin: 1.5rem 0;
+        }
+        
+        .badge {
+            font-size: 0.75rem;
+            font-weight: 800;
+            color: var(--primary);
+            background: rgba(6, 182, 212, 0.1);
+            padding: 6px 12px;
+            border-radius: 20px;
+            border: 1px solid rgba(6, 182, 212, 0.3);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        @media (max-width: 800px) { 
+            .calculator-card { 
+                grid-template-columns: 1fr; 
+            } 
+            .input-section { 
+                border-right: none; 
+                border-bottom: 1px solid var(--border); 
+            } 
+            .formula-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="index.html" class="logo">
+        <i class="fas fa-calculator"></i>
+        AllTools<span>Free</span>
+    </a>
+    <div class="badge">
+        <i class="fas fa-weight"></i> HEALTH 2026
+    </div>
+</nav>
+
+<div class="container">
+    <div class="ad-container">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3335211279499934"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <main class="calculator-card">
+        <section class="input-section">
+            <div class="form-group">
+                <label>Gender</label>
+                <select id="gender" onchange="calculate()">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Height (cm)</label>
+                <div class="height-input">
+                    <input type="number" id="height" value="175" min="140" max="220" oninput="updateSlider(); calculate()">
+                    <span style="color: #94a3b8; font-weight: 600;">cm</span>
+                </div>
+                <input type="range" class="height-slider" id="heightSlider" min="140" max="220" value="175" oninput="updateHeight(); calculate()">
+                <div style="font-size: 0.8rem; color: var(--accent); font-weight: 600; margin-top: 6px; text-align: center;">
+                    Slide or type your height
+                </div>
+            </div>
+        </section>
+
+        <section class="output-section">
+            <div style="text-align: center;">
+                <div style="font-weight: 700; color: #94a3b8; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.5px;">Average Ideal Weight</div>
+                <div class="weight-result" id="mainWeight">68.2</div>
+                <div class="unit-label">KILOGRAMS</div>
+            </div>
+
+            <div class="formula-grid">
+                <div class="formula-box">
+                    <span>Devine</span>
+                    <b id="devine">-</b>
+                </div>
+                <div class="formula-box">
+                    <span>Robinson</span>
+                    <b id="robinson">-</b>
+                </div>
+                <div class="formula-box">
+                    <span>Miller</span>
+                    <b id="miller">-</b>
+                </div>
+                <div class="formula-box">
+                    <span>Hamwi</span>
+                    <b id="hamwi">-</b>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="info-section">
+        <h3><i class="fas fa-info-circle"></i> About Ideal Weight</h3>
+        <p style="color: #94a3b8; font-size: 0.9rem; margin-bottom: 1rem;">
+            Ideal Body Weight (IBW) is an estimate used by medical professionals for medication dosages and health assessments. Our calculator averages four scientific formulas for the most accurate result.
+        </p>
+        
+        <h3><i class="fas fa-question-circle"></i> Frequently Asked</h3>
+        
+        <div class="faq-item">
+            <h4>What's the best formula?</h4>
+            <p>Most doctors prefer the Devine Formula, but we average all four for balanced results.</p>
+        </div>
+        
+        <div class="faq-item">
+            <h4>Does this account for muscle?</h4>
+            <p>No. These formulas are height/gender based. Athletes may weigh more due to muscle mass.</p>
+        </div>
+        
+        <div class="faq-item">
+            <h4>Why include gender?</h4>
+            <p>Men and women have different bone densities and muscle-to-fat ratios, affecting weight baselines.</p>
+        </div>
+    </div>
+    
+    <div class="ad-container">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3335211279499934"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+</div>
+
+<script>
+    function updateHeight() {
+        const slider = document.getElementById('heightSlider');
+        const input = document.getElementById('height');
+        input.value = slider.value;
+    }
+    
+    function updateSlider() {
+        const input = document.getElementById('height');
+        const slider = document.getElementById('heightSlider');
+        const value = Math.min(220, Math.max(140, input.value));
+        input.value = value;
+        slider.value = value;
+    }
+    
+    function calculate() {
+        const gender = document.getElementById('gender').value;
+        const hCm = parseFloat(document.getElementById('height').value) || 0;
+        const hIn = hCm / 2.54;
+        const over5ft = hIn - 60;
+
+        let d, r, m, ha;
+
+        if (gender === 'male') {
+            d = 50 + (2.3 * over5ft);
+            r = 52 + (1.9 * over5ft);
+            m = 56.2 + (1.41 * over5ft);
+            ha = 48 + (2.7 * over5ft);
+        } else {
+            d = 45.5 + (2.3 * over5ft);
+            r = 49 + (1.7 * over5ft);
+            m = 53.1 + (1.36 * over5ft);
+            ha = 45.5 + (2.2 * over5ft);
+        }
+
+        if (over5ft < 0) { 
+            d = (gender==='male'?50:45.5); 
+            r = (gender==='male'?52:49); 
+            m = (gender==='male'?56.2:53.1); 
+            ha = (gender==='male'?48:45.5); 
+        }
+
+        const avg = (d + r + m + ha) / 4;
+
+        document.getElementById('mainWeight').innerText = avg.toFixed(1);
+        document.getElementById('devine').innerText = d.toFixed(1) + " kg";
+        document.getElementById('robinson').innerText = r.toFixed(1) + " kg";
+        document.getElementById('miller').innerText = m.toFixed(1) + " kg";
+        document.getElementById('hamwi').innerText = ha.toFixed(1) + " kg";
+    }
+    
+    window.onload = function() {
+        calculate();
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    };
+</script>
+</body>
+</html>

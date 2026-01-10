@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>401k Retirement Calculator 2026 | Professional Wealth Planner</title>
+    <meta name="description" content="Calculate your 401k retirement savings with precision. Includes employer matching, salary growth, and inflation-adjusted ROI.">
+    <meta name="keywords" content="401k calculator 2026, retirement planner, compound interest, employer match tool, AllToolsFree, investment calculator">
+    <meta name="author" content="AllToolsFree">
+    <link rel="canonical" href="https://jiban70.github.io/401k-retirement-calculator.html" />
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3335211279499934" crossorigin="anonymous"></script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FinancialCalculator",
+      "name": "Professional 401k Calculator",
+      "url": "https://jiban70.github.io/401k-retirement-calculator.html",
+      "description": "Calculate future 401k balances with visual growth charts.",
+      "category": "RetirementPlanning"
+    }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #059669;
+            --accent: #10b981;
+            --bg: #0f172a;
+            --card: #1e293b;
+            --text: #f1f5f9;
+            --border: #334155;
+            --shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        /* Navigation */
+        nav {
+            padding: 1rem 5%;
+            background: rgba(15, 23, 42, 0.95);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .logo span {
+            color: var(--accent);
+        }
+        
+        .security-badge {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--accent);
+            background: rgba(16, 185, 129, 0.1);
+            padding: 6px 12px;
+            border-radius: 20px;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.5rem;
+        }
+        
+        .page-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .page-header h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            color: var(--accent);
+        }
+        
+        .page-header p {
+            color: #94a3b8;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Calculator Layout */
+        .calculator-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        @media (max-width: 900px) {
+            .calculator-wrapper {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Input Panel */
+        .input-panel {
+            background: var(--card);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+        }
+        
+        .input-panel h2 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent);
+        }
+        
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+        
+        .form-group label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #94a3b8;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+        }
+        
+        .form-group label span {
+            font-weight: 700;
+            color: var(--accent);
+        }
+        
+        input {
+            width: 100%;
+            background: rgba(30, 41, 59, 0.7);
+            border: 1px solid var(--border);
+            padding: 12px;
+            border-radius: 8px;
+            color: var(--text);
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.3s;
+        }
+        
+        input:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+        }
+        
+        /* Results Panel */
+        .results-panel {
+            background: rgba(255, 255, 255, 0.02);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+        }
+        
+        .results-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .results-header h2 {
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent);
+        }
+        
+        .reset-btn {
+            background: rgba(239, 68, 68, 0.1);
+            color: #ef4444;
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        
+        /* Results Display */
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .result-card {
+            background: rgba(15, 23, 42, 0.7);
+            padding: 1rem;
+            border-radius: 10px;
+            border-left: 3px solid var(--accent);
+        }
+        
+        .result-card h3 {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #94a3b8;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+        }
+        
+        .result-card .value {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--accent);
+        }
+        
+        /* Highlight Box */
+        .highlight-box {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(59, 130, 246, 0.1));
+            border-radius: 15px;
+            border: 2px solid var(--accent);
+        }
+        
+        .highlight-box .label {
+            text-transform: uppercase;
+            font-weight: 700;
+            color: #94a3b8;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+        
+        .highlight-box h2 {
+            font-size: 2.5rem;
+            color: var(--accent);
+            font-weight: 800;
+        }
+        
+        /* Chart */
+        .chart-container {
+            height: 250px;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Summary */
+        .summary {
+            background: rgba(15, 23, 42, 0.7);
+            padding: 1rem;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+        }
+        
+        .summary h3 {
+            font-size: 1rem;
+            margin-bottom: 0.8rem;
+            color: var(--accent);
+        }
+        
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .summary-item:last-child {
+            border-bottom: none;
+        }
+        
+        /* FAQ */
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .faq-box {
+            background: var(--card);
+            padding: 1rem;
+            border-radius: 10px;
+            border-left: 3px solid var(--accent);
+        }
+        
+        .faq-box h4 {
+            color: #fff;
+            margin-bottom: 6px;
+            font-size: 0.95rem;
+        }
+        
+        .faq-box p {
+            color: #94a3b8;
+            font-size: 0.85rem;
+        }
+        
+        .ad-container {
+            text-align: center;
+            margin: 1.5rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .results-grid {
+                grid-template-columns: 1fr;
+            }
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="index.html" class="logo">
+        <i class="fas fa-calculator"></i>
+        AllTools<span>Free</span>
+    </a>
+    <div class="security-badge">
+        <i class="fas fa-lock"></i> 2026 SECURE
+    </div>
+</nav>
+
+<div class="container">
+    <div class="ad-container">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3335211279499934"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <div class="page-header">
+        <h1>401k Retirement Calculator 2026</h1>
+        <p>Plan your financial future with precision calculations and visual projections</p>
+    </div>
+
+    <div class="calculator-wrapper">
+        <!-- Input Panel -->
+        <div class="input-panel">
+            <h2><i class="fas fa-sliders-h"></i> Input Parameters</h2>
+            
+            <div class="form-group">
+                <label>Current Age <span id="ageValue">30</span></label>
+                <input type="number" id="age" min="18" max="80" value="30" oninput="calculate(); updateValue('age', this.value);">
+            </div>
+            
+            <div class="form-group">
+                <label>Retirement Age <span id="rAgeValue">65</span></label>
+                <input type="number" id="rAge" min="25" max="100" value="65" oninput="calculate(); updateValue('rAge', this.value);">
+            </div>
+            
+            <div class="form-group">
+                <label>Annual Salary <span id="salaryValue">$60,000</span></label>
+                <input type="number" id="salary" min="10000" max="1000000" value="60000" oninput="calculate(); updateValue('salary', this.value, true);">
+            </div>
+            
+            <div class="form-group">
+                <label>Current 401k <span id="savingsValue">$25,000</span></label>
+                <input type="number" id="savings" min="0" max="1000000" value="25000" oninput="calculate(); updateValue('savings', this.value, true);">
+            </div>
+            
+            <div class="form-group">
+                <label>Your Contribution <span id="contribValue">10%</span></label>
+                <input type="number" id="contrib" min="0" max="50" step="0.5" value="10" oninput="calculate(); updateValue('contrib', this.value, false, true);">
+            </div>
+            
+            <div class="form-group">
+                <label>Employer Match <span id="matchValue">4%</span></label>
+                <input type="number" id="match" min="0" max="15" step="0.5" value="4" oninput="calculate(); updateValue('match', this.value, false, true);">
+            </div>
+            
+            <div class="form-group">
+                <label>Expected Return <span id="roiValue">7%</span></label>
+                <input type="number" id="roi" min="0" max="20" step="0.1" value="7" oninput="calculate(); updateValue('roi', this.value, false, true);">
+            </div>
+        </div>
+
+        <!-- Results Panel -->
+        <div class="results-panel">
+            <div class="results-header">
+                <h2><i class="fas fa-chart-bar"></i> Retirement Projections</h2>
+                <button class="reset-btn" onclick="resetCalculator()">
+                    <i class="fas fa-redo"></i> Reset
+                </button>
+            </div>
+            
+            <div class="results-grid">
+                <div class="result-card">
+                    <h3>Total Contribution</h3>
+                    <div class="value" id="totalContributions">$0</div>
+                </div>
+                <div class="result-card">
+                    <h3>Investment Growth</h3>
+                    <div class="value" id="investmentGrowth">$0</div>
+                </div>
+                <div class="result-card">
+                    <h3>Years to Retire</h3>
+                    <div class="value" id="yearsToRetirement">0</div>
+                </div>
+            </div>
+            
+            <div class="highlight-box">
+                <div class="label">Estimated Retirement Balance</div>
+                <h2 id="totalDisplay">$0</h2>
+            </div>
+            
+            <div class="chart-container">
+                <canvas id="growthChart"></canvas>
+            </div>
+            
+            <div class="summary">
+                <h3><i class="fas fa-list-alt"></i> Summary</h3>
+                <div class="summary-item">
+                    <span>Monthly Contribution</span>
+                    <span id="monthlyContribution">$0</span>
+                </div>
+                <div class="summary-item">
+                    <span>Annual Contribution</span>
+                    <span id="annualContribution">$0</span>
+                </div>
+                <div class="summary-item">
+                    <span>Employer Match Value</span>
+                    <span id="employerMatchValue">$0/year</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="faq-grid">
+        <div class="faq-box">
+            <h4><i class="fas fa-question-circle"></i> What is the 401k limit?</h4>
+            <p>For 2026, the limit is projected to be $22,500 for employees under 50. Aim for 15% of gross income.</p>
+        </div>
+        <div class="faq-box">
+            <h4><i class="fas fa-question-circle"></i> How does inflation affect my 401k?</h4>
+            <p>This calculator uses 7% return (10% market gain minus 3% inflation) for realistic estimates.</p>
+        </div>
+        <div class="faq-box">
+            <h4><i class="fas fa-question-circle"></i> Is my data private?</h4>
+            <p>Yes! All calculations are done locally in your browser. We don't store your data.</p>
+        </div>
+        <div class="faq-box">
+            <h4><i class="fas fa-question-circle"></i> Can I use different currencies?</h4>
+            <p>Absolutely! Enter your salary and savings in your local currency (NPR, INR, USD, etc.).</p>
+        </div>
+    </div>
+    
+    <div class="ad-container">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3335211279499934"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+</div>
+
+<script>
+    let growthChart = null;
+    
+    function formatCurrency(value) {
+        return new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'USD',
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 0
+        }).format(value);
+    }
+    
+    function updateValue(id, value, isCurrency = false, isPercent = false) {
+        const element = document.getElementById(id + 'Value');
+        if (!element) return;
+        
+        if (isCurrency) {
+            element.textContent = formatCurrency(value);
+        } else if (isPercent) {
+            element.textContent = value + '%';
+        } else {
+            element.textContent = new Intl.NumberFormat().format(value);
+        }
+    }
+    
+    function resetCalculator() {
+        document.getElementById('age').value = 30;
+        document.getElementById('rAge').value = 65;
+        document.getElementById('salary').value = 60000;
+        document.getElementById('savings').value = 25000;
+        document.getElementById('contrib').value = 10;
+        document.getElementById('match').value = 4;
+        document.getElementById('roi').value = 7;
+        
+        updateValue('age', 30);
+        updateValue('rAge', 65);
+        updateValue('salary', 60000, true);
+        updateValue('savings', 25000, true);
+        updateValue('contrib', 10, false, true);
+        updateValue('match', 4, false, true);
+        updateValue('roi', 7, false, true);
+        
+        calculate();
+    }
+    
+    function calculate() {
+        const age = parseInt(document.getElementById('age').value) || 30;
+        const rAge = parseInt(document.getElementById('rAge').value) || 65;
+        let salary = parseFloat(document.getElementById('salary').value) || 0;
+        let balance = parseFloat(document.getElementById('savings').value) || 0;
+        const contribRate = (parseFloat(document.getElementById('contrib').value) / 100) || 0;
+        const matchRate = (parseFloat(document.getElementById('match').value) / 100) || 0;
+        const annualROI = (parseFloat(document.getElementById('roi').value) / 100) || 0;
+        
+        const yearsToRetirement = rAge - age;
+        const monthlyROI = annualROI / 12;
+        let totalContributions = 0;
+        let dataPoints = [];
+        let labels = [];
+        
+        for (let year = 0; year <= yearsToRetirement; year++) {
+            const annualTotalContribution = salary * (contribRate + matchRate);
+            totalContributions += annualTotalContribution;
+            
+            const monthlyContribution = annualTotalContribution / 12;
+            
+            for (let month = 0; month < 12; month++) {
+                if (year === 0 && month === 0) continue;
+                balance = balance * (1 + monthlyROI) + monthlyContribution;
+                
+                if (month === 0) {
+                    labels.push(`Age ${age + year}`);
+                    dataPoints.push(balance);
+                }
+            }
+        }
+        
+        const investmentGrowth = balance - totalContributions - parseFloat(document.getElementById('savings').value || 0);
+        const monthlyContribution = (salary * (contribRate + matchRate)) / 12;
+        const annualContribution = salary * (contribRate + matchRate);
+        const employerMatchValue = salary * matchRate;
+        
+        document.getElementById('totalDisplay').textContent = formatCurrency(balance);
+        document.getElementById('totalContributions').textContent = formatCurrency(totalContributions);
+        document.getElementById('investmentGrowth').textContent = formatCurrency(investmentGrowth);
+        document.getElementById('yearsToRetirement').textContent = yearsToRetirement;
+        document.getElementById('monthlyContribution').textContent = formatCurrency(monthlyContribution);
+        document.getElementById('annualContribution').textContent = formatCurrency(annualContribution);
+        document.getElementById('employerMatchValue').textContent = formatCurrency(employerMatchValue) + '/year';
+        
+        updateChart(labels, dataPoints);
+    }
+    
+    function updateChart(labels, data) {
+        const ctx = document.getElementById('growthChart').getContext('2d');
+        if (growthChart) growthChart.destroy();
+        
+        growthChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: '401k Balance',
+                    data: data,
+                    borderColor: '#10b981',
+                    backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                    fill: true,
+                    tension: 0.3,
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    y: { 
+                        grid: { color: 'rgba(255,255,255,0.05)' }, 
+                        ticks: { 
+                            color: '#94a3b8',
+                            callback: function(value) {
+                                if (value >= 1000000) return '$' + (value/1000000).toFixed(1) + 'M';
+                                if (value >= 1000) return '$' + (value/1000).toFixed(0) + 'K';
+                                return '$' + value;
+                            }
+                        }
+                    },
+                    x: { 
+                        grid: { display: false }, 
+                        ticks: { color: '#94a3b8' } 
+                    }
+                }
+            }
+        });
+    }
+    
+    window.onload = function() {
+        updateValue('age', 30);
+        updateValue('rAge', 65);
+        updateValue('salary', 60000, true);
+        updateValue('savings', 25000, true);
+        updateValue('contrib', 10, false, true);
+        updateValue('match', 4, false, true);
+        updateValue('roi', 7, false, true);
+        calculate();
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    };
+</script>
+</body>
+</html>
